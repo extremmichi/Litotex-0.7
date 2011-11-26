@@ -1,0 +1,177 @@
+{include file="file:header.html"} 
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}js/wz_tooltip.js"></script>
+{literal}
+
+
+ <style>
+#map_all {background-image:url({/literal}{$LITO_IMG_PATH}mapbg.png{literal});
+      background-repeat:repeat;
+      width:400px;
+      height:400px;
+     }
+.land_0{
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      
+      }
+.land_1 {background-image:url({/literal}{$LITO_IMG_PATH}land1.png{literal});
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      }
+.land_2 {background-image:url({/literal}{$LITO_IMG_PATH}land2.png{literal});
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      }
+.land_3 {background-image:url({/literal}{$LITO_IMG_PATH}land3.png{literal});
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      }
+.land_4 {background-image:url({/literal}{$LITO_IMG_PATH}land4.png{literal});
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      }
+.land_b {background-image:url({/literal}{$LITO_IMG_PATH}landb.png{literal});
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      }
+.land_f {background-image:url({/literal}{$LITO_IMG_PATH}landf.png{literal});
+       width:80px;
+       height:80px;
+       float:left;
+       border:0px;
+       font-size:9px;
+       text-align:center;
+      }
+</style>  
+<script language='javascript' type='text/javascript'>
+/*@cc_on @if (@_win32 && @_jscript_version >= 5) if (!window.XMLHttpRequest)
+window.XMLHttpRequest = function() { return new ActiveXObject('Microsoft.XMLHTTP') }
+@end @*/
+var curpos_x={/literal}{$usr_x}{literal};
+var curpos_y={/literal}{$usr_y}{literal};
+function go_map(var_x,var_y)
+ {var x = new XMLHttpRequest();
+ curpos_x+=var_x;
+ curpos_y+=var_y;
+ 
+ 
+  x.open("GET","{/literal}{$LITO_MODUL_PATH_URL}{literal}map/map.php?action=goto&x="+curpos_x+"&y="+curpos_y,false);
+  x.send(null);
+  resp = x.responseText;
+  
+ document.getElementById("map_all").innerHTML = " "+resp+" ";
+  
+ }       
+</script> 
+{/literal}   
+<div id="content">
+
+<!-- Karte -->
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#MAP_SHOW#}</div>
+          
+          <div class="inhalt_box1">
+             <center> 
+<table width="500" height="500" align="center" >
+  <tr> 
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'><span class="normalfont">{$navi_oben}</span></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align='center'><span class="normalfont">{$navi_links}</span></td>
+    <td align='center'></td>
+    <td align='center'><div id='map_all'>{$return_div}</div></td>
+    <td align='center'></td>
+    <td align='center'><span class="normalfont">{$navi_rechts}</span></td>
+  </tr>
+  <tr> 
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'><span class="normalfont">{$navi_unten}</span></td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+  </tr>
+  <tr> 
+<form name="show_map_pos" method="post" action="map.php?cxid=$sid">
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'><br /><br />
+    zeige: 
+    <input class="textinput_smal" name="x_pos" type="text" size="7" maxlength="3" value="{$usr_x}">
+    :
+    <input class="textinput_smal" name="y_pos" type="text" size="7" maxlength="3" value="{$usr_y}">
+    <input type="submit" class="button" name="Submit" value="anzeigen">
+  
+    
+    </td>
+    <td align='center'>&nbsp;</td>
+    <td align='center'>&nbsp;</td>
+  </form>
+  </tr>
+  <tr>
+  <td align='center'>&nbsp;</td>
+  <td align='center'>&nbsp;</td>
+  <td align='center'><br><br><img src="../../images/minimap/map_mini.png" border="0"></td>
+  <td align='center'>&nbsp;</td>
+  <td align='center'>&nbsp;</td>
+  </tr>
+</table></div>
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+
+
+</center>
+</div>
+    {include file="file:footer.html"}
+

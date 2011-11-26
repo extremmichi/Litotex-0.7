@@ -1,0 +1,42 @@
+{include file="file:header.html"}  
+<div id="content"> 
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#PIC_UPLOAD_USER#}</div> 
+                                                          
+          <div class="inhalt_box1">{#PIC_UPLOAD_USER_DESC#}<br>
+          <form name="1" method="post" enctype="multipart/form-data" action="upload_pic.php?action=img_upload">  
+<table width="100%" align="center"> 
+                                     <tr>     
+                                         <td align="left" valign="top" class="tabl_cells" ><p><img src="{$USER_USERIMAGE}" width="100" height="100" align="left"></p>
+
+                                         <td rowspan="2" class="tabl_cells" >                                     
+                                            <span class="normalfont"><strong>{#PIC_UPLOAD_USER_DESC1#}</strong></span><br> 
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="200000">  
+                                            <br>{#PIC_UPLOAD_USER_UPLOAD#}<br>  
+                                            <input class="button" name="userfile" type="file" size=40><br><br>  
+                                            <input class="button" type="submit" value="{#PIC_UPLOAD_USER_SAVE#}" align="right">  
+                                </td> 
+                  </tr> 
+                                    <tr>  
+                            <td align="left" valign="top" class="tabl_cells" >  
+                            <then> 
+                              <div align="center"><a href="upload_pic.php?action=del_pic">{#PIC_UPLOAD_USER_DEL#}</a></div> 
+                             </then><else></else></if>    
+                                </td> 
+                                </tr> 
+    </table> 
+    </form> 
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+</div>
+    {include file="file:footer.html"}

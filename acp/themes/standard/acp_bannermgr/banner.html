@@ -1,0 +1,83 @@
+{include file="file:header.html"}
+
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}banner.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat">
+		          
+		          
+					{#BANNER_T_5#}<br><br>	           
+	
+<form name="bmgr" method="post" action="banner.php?action={$ACTION_SAVE}">
+  
+              <table  width="600" align="center">
+                <tr> 
+                  <th colspan="7"><div align="left"><span class="normalfont"></span><span class="normalfont">{#BANNER_T_8#}</span></div></th>
+                </tr>
+                <tr> 
+                  <td  width="20%">{#BANNER_T_10#}</td>
+                  <td  width="80%"><input name="banner_label" type="text" class="textinput" value="{$banner_label}" size="50"> 
+                  </td>
+                </tr>
+                <tr> 
+                  <td  width="20%">{#BANNER_T_1#}</td>
+                  <td  width="80%"><textarea  name="banner_code" cols="50" >{$banner_code}</textarea> 
+                  </td>
+                </tr>
+                <tr> 
+                  <td >&nbsp;</td>
+                  <td ><div align="right"> 
+                      <input type="submit" class="button" name="anzeigen" value="{#BANNER_T_3#}">
+                    </div></td>
+                </tr>
+              </table>
+  </form>
+
+			<table   width="700" align="center">
+  <tr> 
+                <th width="10%" height="21"  ><div align="left"><span class="normalfont"><b>{#BANNER_T_9#}</b></span></div></th>
+   			    <th  width="40%"><span class="normalfont"><b>{#BANNER_T_10#}</b></span></th>
+                <th  width="10%"><span class="normalfont"><b>{#BANNER_T_2#}</b></span></th>
+                <th  width="20%"><span class="normalfont"><b>{#BANNER_T_11#}</b></span></th>
+
+  </tr>
+{foreach item=con from=$banner_output}
+ <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+  <td width="10%"><span class="normalfont">{$con.banner_id} </span></td>
+  <td width="40%"><span class="normalfont">
+   <a href="banner.php?action=edit&id={$con.banner_id}" onmouseover="Tip('<table width=\'100%\' border=\'0\' bordercolor=\'#666666\' cellspacing=\'0\'><tr><td bgcolor=\'#7B86AD\'><font color=\'#FFFFFF\' size=\'2\'>Bannervorschau:</font></td></tr><tr><td bgcolor=\'#9CA2BD\'><font color=\'#FFFFFF\' size=\'2\'>{$con.banner_code}</font></td></tr></table>')" onmouseout="UnTip()">{$con.banner_label}</a></td>
+  </span></td>
+  <td width="20%">
+  	{if $con.active =='1' }
+			<a href="banner.php?action=activate&id={$con.banner_id}"><img src="{$LITO_IMG_PATH}deactive.png" alt="{#NEWS_DEACTIVATE_TEXT#}" title="{#NEWS_DEACTIVATE_TEXT#}" width="20" height="20" border="0"></a>
+			{else}
+			<a href="banner.php?action=activate&id={$con.banner_id}"><img src="{$LITO_IMG_PATH}active.png" alt="{#NEWS_ACTIVATE_TEXT#}" title="{#NEWS_ACTIVATE_TEXT#}" width="20" height="20" border="0"></a>
+			{/if}
+  	<a href="banner.php?action=delete&id={$con.banner_id}"><img src="{$LITO_IMG_PATH}delete.png" alt="{#NEWS_DELETE_TEXT#}" title="{#NEWS_DELETE_TEXT#}" width="20" height="20" border="0"></a>
+		</td>
+  <td width="20%"><span class="normalfont">{$con.banner_count}</span></td>
+ </tr>
+  {/foreach} 
+
+</table>	  	
+				  		
+				  	
+						
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

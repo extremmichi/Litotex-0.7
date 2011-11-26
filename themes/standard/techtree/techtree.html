@@ -1,0 +1,44 @@
+{include file="file:header.html"} 
+<div id="content">
+ 
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table width="90%" border="0" align="center">
+            <tr>
+              <td ><div align="center"><a href="techtree.php">{#T_Row_1#}</a></div></td>
+              <td ><div align="center"><a href="techtree.php?type=1">{#T_Row_2#}</a></div></td>
+              <td ><div align="center"><a href="techtree.php?type=2">{#T_Row_3#}</a></div></td>
+            </tr>
+          </table>
+          </div>
+          <div class="inhalt_box1">
+            <table class ="lito_table" width="100%" border="0">
+					<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		    		<td width="5%"><strong>{#T_desc_1#}</strong></td>
+					  <td width="30%"><strong>{#T_desc_2#}</strong></td>
+					  <td width="15%"><strong>{#T_req_1#}</strong></td>
+					  <td width="10%"><strong>{#T_req_2#}</strong></td>
+				</tr>
+		  						{foreach item=con from=$daten}
+		  							<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		  							<td width="5%"><img src="{$con.image}"></td>
+		  							<td width="30%"><b>{$con.name}</b><br><span class="smallfont_black">{$con.description}</span></td>
+		  							<td width="15%">{$con.req1}</td>
+		  							<td width="10%">{$con.req2}</td>
+								{/foreach}
+						</table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+    {include file="file:footer.html"}

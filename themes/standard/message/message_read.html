@@ -1,0 +1,40 @@
+{include file="file:header.html"}
+<div id="content"> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{$M_DATE}</div> 
+                                                          
+          <div class="inhalt_box1">
+              <form action="message.php?action=submit_send&cxid=$sid" method="post">
+              <table class="table_over" width="100%" align="center">
+               <tr>
+                <td class="tdg" width="15%" valign="top"><span class="normalfont"><b>{#LN_MESSAGE_2#}</b></span></td>
+                <td class="tdw" width="30%"><span class="normalfont">{$PROFIL_LINK}</span></td>
+               </tr>
+                <tr>
+                <td class="tdg" width="15%" valign="top"><span class="normalfont"><b>{#LN_MESSAGE_3#}</b></span></td>
+                <td class="tdw" width="30%"><span class="normalfont">{$M_SUBJECT}</span></td>
+               </tr>
+               <tr>
+                <td class="tdg" width="15%" valign="top"><span class="normalfont"><b>{#LN_MESSAGE_16#}</b></span></td>
+                <td class="tdw" width="30%"><span class="normalfont">{$M_TEXT}</span></td>
+               </tr>
+              </table><br />
+              <center><button name="aktion" class="button" type="button"  value="new" onClick="self.location.href='message.php'">{#LN_MESSAGE_14#}</button> 
+              <button name="aktion" class="button" type="button"  value="new2" onClick="self.location.href='message.php?action=send&username={$M_USER_NAME}&pmid={$M_ID}'">{#LN_MESSAGE_15#}</button></center>
+              </form>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}

@@ -1,0 +1,91 @@
+{include file="file:header.html"}
+ {literal}
+<script language="javascript">
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "advanced",
+		theme_advanced_toolbar_location:'top',
+		theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+		theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor"
+	});
+</script>
+ {/literal}
+
+
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}gameoptions.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat"> 
+		  <span class="normalfont"> 
+          <b>aktuelle Anzahl Variablen: {$var_count}</b><br><br>
+          
+            <p>Hier gibt es die M&ouml;glichkeit neue Statische Variablen f&uuml;r 
+              das Spiel zu konfigurieren.<br>
+              Diese stehen im gesammten Spiel zur Verf&uuml;gung.<br>
+              <br>
+              Konfigurieren k&ouml;nnt ihr diese im Men&uuml;punkt eurer Wahl. 
+              <br>
+              Diese Funktion sollte mir Bedacht angewendet werden !<br>
+              <br>
+              Beispiel (an Hand einer bereits existierenden Variable) :<br>
+              <em>Variablenname : op_set_offline <br>
+              Variablentitel : Wartungsmodus<br>
+              Type: Ja/ Nein<br>
+              Anzeige im Men&uuml;punkt: Wartungsmodus</em><br>
+              <br>
+              Durch die Abfrage im Code der Variablen <em>$op_set_offline</em> 
+              kannst du bestimmen ob das Spiel im Offlinemodus ist.<br>
+              Die Einstellungen f&uuml;r Online/ Offlinemodus k&ouml;nnen im Men&uuml;punkt 
+              'Wartungsmodus' eingestellt werden. <br>
+              <br>
+              WICHTIG !!!: Zur besseren &Uuml;bersicht m&uuml;ssen alle variablen 
+              mit op_ beginnen ! 
+            <p>&nbsp; </p>
+            </span> 
+            <form name="form_srv" method="post" action="gameoptions.php?action=new_save">
+				  <table class ="lito_table" width="100%">
+					<tr> 
+					<td>Variablenname</td>
+					<td><input class="textinput" type="text" name="varname"></td>
+				  </tr>
+				  <tr> 
+					  <td>Variablentitel</td>
+					  <td><input type="text" class="textinput" name="vartitel"></td>
+				  </tr>
+				  <tr> 
+					  <td>Type</td>
+					  <td><select class="combo" name="select_type">
+						  <option value="truefalse">Ja / Nein</option>
+						  <option value="text">Text</option>
+						  <option value="textarea">Textbereich</option>
+						</select>
+						</td>
+				 </tr>
+				 <tr> 
+					  <td>Anzeige im Men&uuml;punkt</td>
+					  <td>{$combo_cat}
+						</td>
+				 </tr>
+				   <tr> 
+					  <td width="188">&nbsp;</td>
+					  <td width="195"><div align="right"><input type="submit" clasS="button" name="Submit" value="Speichern"></div></td>
+				  </tr>
+				</table>
+      </form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

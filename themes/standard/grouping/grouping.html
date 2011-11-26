@@ -1,0 +1,80 @@
+{include file="file:header.html"}
+
+<div id="content"> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#GROUPING_9#}</div> 
+                                                          
+          <div class="inhalt_box1">
+            <table  width="100%" align="center">
+             <tr>
+              <th  width="49%"><span class="normalfont"><b>{#GROUPING_1#}</b></span></th>
+              <th  width="38%"><span class="normalfont"><b>{#GROUPING_2#}</b></span></th>
+              <th  width="13%"><span class="normalfont"><b>{#GROUPING_3#}</b></span></th>
+             </tr>
+                {foreach item=con from=$daten}
+                <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+                  <td width="49%"><span class="normalfont"><a href="" {$con[2]}>{$con[0]}</a></span></td>
+                  <td width="38%"><span class="normalfont">{$con[1]}</span></td>
+                  <td width="13%"><span class="normalfont">
+                  <a href={$con[3]}><img src="{$LITO_IMG_PATH}delete.png" border="0" alt={#GROUPING_3#} title= {#GROUPING_3#}></a>
+                  	{if $con[4] != '' }
+                  	<a href={$con[4]}><img src="{$LITO_IMG_PATH}make_empty.png" border="0" alt={#GROUPING_8#} title= {#GROUPING_8#}></a>
+                  	{/if}
+                  </span></td>
+                </tr>
+                {/foreach}
+            </table>
+        </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#GROUPING_10#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <span class="bluefont"><center>{#GROUPING_4#}</center></span><br />
+            <form action="grouping.php?cxid=$sid&action=formate" method="post">
+            <table  width="100%" align="center">
+             <tr>
+              <th  colspan="6"><span class="normalfont"><b>{#GROUPING_5#}</b></span></th>
+             </tr>
+              <tr>
+              <td  width="30%"><span class="normalfont"><b>{#GROUPING_6#}</b></span></td>
+              <td  width="30%"><input class="textinput"  type="text" name="name" value=""></td>
+             </tr>
+                {foreach item=con from=$daten2}
+                <tr>
+                  <td  width="50%"><span class="normalfont"><b>{$con[0]}</b></span></td>
+                  <td  width="50%"><input class="textinput" type="text" name={$con[1]} value="0" size="3"> / {$con[2]}</td>
+                </tr>
+                {/foreach}
+             <tr>
+              <td  colspan="6"><br /><center><input class="button"  type="submit" value={#GROUPING_7#}></center></td>
+             </tr>
+            </table>
+            </form>
+        </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+</div>
+{include file="file:footer.html"}

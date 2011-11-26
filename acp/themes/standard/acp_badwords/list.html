@@ -1,0 +1,65 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}badwords.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Verbotene W&ouml;rter</h1>
+		          <p>Mit Usernamen die hier gelistet sind, kann man sich nicht registrieren, Wörter lassen sich aber auch insgesammt im Spiel verbieten.</p>
+		          <table>
+		          <tr>
+		          	<td>Titel</td>
+		          	<td>In Mail verbieten</td>
+		          	<td>Aktionen</td>
+		          </tr>
+		          {foreach item=badword from=$badwords}
+		          	{if $change == $badword.id}
+		          	<form action="?action=save&id={$badword.id}" method="POST">
+		          	<tr>
+		          	<td><input class="textinput" type="text" name="title" value="{$badword.title}"></td>
+		          	<td><input type="checkbox" name="in_mail"{if $badword.in_mail == 1} CHECKED{/if}></td>
+		          	<td>
+		          	<input class="button"   type="submit">
+		          	</td>
+		          	</tr>
+		          	</form>
+		          	{else}
+		          	<tr>
+		          	<td>{$badword.title}</td>
+		          	<td>
+		          	{if $badword.in_mail == 1}<img src="{$LITO_IMG_PATH}active.png" alt="in InGame Mail verwenden" title="in InGame Mail verwenden" width="20" height="20" border="0">{else}<img src="{$LITO_IMG_PATH}deactive.png" alt="NICHT in InGame Mail verwenden" title="NICHT in InGame Mail verwenden" width="20" height="20" border="0">{/if}
+		          	</td>
+		          	<td>
+		          	<a href="?action=delete&id={$badword.id}"><img src="{$LITO_IMG_PATH}delete.png" alt="l&ouml;schen" title="l&ouml;schen" width="20" height="20" border="0"></a>
+		          	<a href="?action=change&id={$badword.id}"><img src="{$LITO_IMG_PATH}news_new.png" alt="editieren" title="editieren" width="20" height="20" border="0"></a>
+		          	</td>
+		          	</tr>
+		          	{/if}
+		          {/foreach}
+		          <form action="?action=new" method="POST">
+		          <tr>
+		          <td>
+		          <input class="textinput" type="text" name="title">
+		          </td>
+		          <td><input type="checkbox" name="in_mail"></td>
+		          <td>
+		          <input class="button" type="submit">
+		          </td>
+		          </tr>
+		          </form>
+		          </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

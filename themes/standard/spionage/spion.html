@@ -1,0 +1,85 @@
+{include file="file:header.html"}
+
+{$TIME_BANNER_INIT}
+<div id="content"> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#LN_SPION_9#}</div> 
+                                                          
+          <div class="inhalt_box1">
+            <table  width="80%" align="center">
+             <tr>
+              <th   width="20%"><span class="normalfont"><b>{#LN_SPION_3#}</b></span></th>
+              <th   width="5%"><span class="normalfont"><b>{#LN_SPION_NUMBER#}</b></span></th>
+              <th   width="40%"><span class="normalfont"><b>{#LN_SPION_4#}</b></span></th>
+             </tr>
+             {foreach item=con from=$daten_spion}
+             <tr>
+             <td align="left" width="20%"><span class="normalfont"><b>{$con[0]}</b></span></td>
+             <td align="left" width="5%"><span class="normalfont"><b>{$con[1]}</b></span></td>
+             <td align="left" width="40%"><span class="normalfont"><b>{$con[2]}</b></span></td>
+             </tr>
+             {/foreach}
+            </table><br>
+		</div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#LN_SPION_5#}</div> 
+                                                          
+          <div class="inhalt_box1">
+            <form action="spion.php?action=send&cxid=$sid" method="post">
+            <table  width="80%" align="center">
+             <tr>
+              <td  colspan="6"><span class="normalfont"><br><center>
+              {#LN_SPION_E_3#} {$spio_count} {$spio_name}<br /> 
+              <br />
+              <table border="0">
+                <tr>
+                  <td><strong>{$spio_name} ({#LN_SPION_NUMBER#})</strong></td>
+                  <td><input type="text" class="textinput" size="4" name="spions" /></td>
+                </tr>
+                <tr>
+                  <td><span class="inhalt_box1_oben">{#LN_SPION_10#}</span></td>
+                  <td><input name="x" type="text" class="textinput_smal" size="2" />
+:
+  <input class="textinput_smal" type="text" size="2" name="y2" /></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+              <p></p>
+              </center></span></td>
+             </tr>
+             <tr>
+              <td align="right" colspan="6"><span class="normalfont"><input class="button" type="submit" value="{#LN_SPION_7#}"></span></td>
+             </tr>
+            </table>
+            </form>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+</div>
+{include file="file:footer.html"}

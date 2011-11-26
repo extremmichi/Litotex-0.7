@@ -1,0 +1,61 @@
+{include file="file:header.html"}
+ {literal}
+<script language="JavaScript">
+function fenster(url)
+{
+NeuesFenster=window.open(url,"Litotex Updateinformationen","width=500,height=400,status=no,scrollbars=yes,resizable=yes")
+}
+
+</script>
+ {/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}modul_installieren.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <form action="?action=upload" method="POST" enctype="multipart/form-data"><p>Neues Modul uploaden (ZIP): 
+		            <input type="file" name="upload_mod" class="button" />
+		             <input class="button" type="submit" value="Upload"></p></form>
+		          <form action="?action=remote" method="POST"><p>Modul vom Update Server kopieren: {if $url_open =='0' }
+		            url_fopen ist in ihrer php.ini deaktiviert! Daher m&uuml;ssen sie neue Module direkt auf update.freebg.de suchen herunterladen und hier wieder hochladen.
+		           {else}<input type="text" name="remote"><input type="submit" class="button" value="Kopieren">{/if}</p></form>
+		          gefundene Module: {$modul_acp_count}<br>
+		          davon nicht installierte ACP Module : {$modul_acp_count_new}<br>
+		          davon nicht installierte GAME Module: {$modul_game_count_new}<br><br>
+		          <br>
+				  		
+			          <table class ="lito_table" width="700" border="0">
+					  		<tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+			    						<td width="20%">Name</td>
+			    						<td width="60%">Beschreibung</td>
+			    						<td width="20%">Version</td>
+			    						<td width="20%">Installieren</td>
+
+			  						</tr>
+					  			{foreach item=con from=$modules}
+			  						<tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+			    						<td width="20%">{$con[0]}</td>
+			    						<td width="60%">{$con[1]}</td>
+			    						<td width="20%">{$con[2]}</td>
+			    						<td width="20%"><a href="modulmgr.php?action=install&id={$con[3]}"><img src="{$LITO_IMG_PATH}active.png" alt="Modul installieren" title="Modul installieren" width="20" height="20" border="0"></td>
+			  						</tr>
+									{/foreach}
+							</table>
+						
+					<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

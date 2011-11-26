@@ -1,0 +1,114 @@
+{include file="file:header.html"}
+<div id="content">
+<center>{#ln_allianz_e_14#}</center><br />
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+        <div style="text-align: left; margin-left: 2px;" class="inhalt_box1_oben">
+                <a href="alliance.php">{#ln_allianz_c_r_11#}</a>
+          </div>
+                                                          
+          <div class="inhalt_box1">
+          <form name="form1" method="post" action="alliance.php?action=update_rang">
+            <input name="nur" type="hidden" value={$tt_id}>
+            <table class="table" width="80%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                <th width="41%" >{#ln_allianz_e_15#}</th>
+                <th width="50%" ></th>
+                <th width="9%" ></th>
+              </tr>
+              <tr> 
+                <td width="41%" >{#ln_allis_2#}</td>
+                <td width="50%" >{#ln_allis_3#}</td>
+                <td width="9%" >{#ln_allianz_c_r_1#}</td>
+              </tr>
+              <tr> 
+                <td>{$all_rang_names}</td>
+                <td>{#ln_allianz_c_r_2#}</td>
+                <td><input name="change_text" type="checkbox" value="checkbox" {$change_text_b}></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_3#}</td>
+                <td><input type="checkbox" name="change_rang" value="checkbox" {$change_rang_b}></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_4#}</td>
+                <td><input type="checkbox" name="rang" value="checkbox" {$give_rang_b}></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_5#}</td>
+                <td><input type="checkbox" name="change_news" value="checkbox" {$change_news_b}></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_6#}</td>
+                <td><input type="checkbox" name="change_fahne" value="checkbox" {$change_fahne_b}></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_7#}</td>
+                <td><input type="checkbox" name="write_rundmail" value="checkbox" {$write_rundmail_b}></td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_8#}</td>
+                <td><input type="checkbox" name="change_forum" value="checkbox" {$change_forum_b}></td>
+              </tr>
+                <tr> 
+                <td>&nbsp;</td>
+                <td>{#ln_allianz_c_r_9#}</td>
+                <td><input type="checkbox" name="use_bord" value="checkbox" {$use_bord_b}></td>
+              </tr>
+            <tr> 
+                 <td>&nbsp;</td>
+                <td><input name="button" type="submit" class="button" value="{#ln_allianz_c_r_12#}"></td>
+                <td></td>
+              </tr>  
+            </table>
+          </form>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+        <div class="inhalt_box1_oben">
+                {#ln_allianz_c_r_10#}
+          </div>
+                                                          
+          <div class="inhalt_box1">
+          <form  method="post" action="alliance.php?action=new_rang">  
+            <table width="501" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+            <td width="136">{#ln_allianz_c_r_10#}</td>
+            <td width="300">
+            <input name="new_rang" type="text" class="textinput" size="50" maxlength="50">
+            </td>
+                <td width="65"><input type="submit" value="{#ln_allianz_c_r_12#}" class="button"></td>
+              </tr>
+            </table>
+          </form> 
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+    
+</div>
+{include file="file:footer.html"}    

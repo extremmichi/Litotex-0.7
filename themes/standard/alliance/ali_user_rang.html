@@ -1,0 +1,51 @@
+{include file="file:header.html"}
+<div id="content">
+
+<center><span class="bluefont">{#ln_allianz_user_rg_3#}<br></span></center><br />
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table border="0" width="100%">
+            <tr>
+              <td align="left"><a href="alliance.php">{#ln_allianz_c_r_11#}</a></td>
+              <td align="right"><b>{#ln_allianz_user_rg_4#}</b></td>
+            </tr>
+          </table>
+          </div> 
+                                                          
+          <div class="inhalt_box1">
+          <form name="form1" method="post" action="">
+                
+              <table width="80%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td width="34" >{#ln_allianz_b_in_2#}</td>
+                  <td width="166" >{#ln_allianz_user_rg_1#}</td>
+                  <td width="100" >{#ln_allianz_user_rg_2#}</td>
+                </tr>
+               
+                {foreach item=con from=$ali_data_rank}
+                 <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                              <td>{$con.counter}</td>
+                              <td>{$con.uname}</td>
+                              <td>{$con.all_rang_names}</td>
+                  </tr>
+                 {/foreach}
+               
+               
+              </table>
+          </form>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}    

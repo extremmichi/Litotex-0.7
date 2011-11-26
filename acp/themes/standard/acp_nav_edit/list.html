@@ -1,0 +1,133 @@
+{include file="file:header.html"}
+
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}acp/js/acp_navigation/jquery.tablednd_0_5.js"></script>
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}acp/js/ajax.js"></script>
+{literal}
+<script type="text/javascript">
+$(document).ready(function() {
+    // Initialise the table
+    $("#table-1").tableDnD({
+   	onDragClass: "tDnD_whileDrag",
+    	onDrop: function(table, row){
+    		var order = '';
+    		var rows = table.tBodies[0].rows;
+            for (var i=0; i<rows.length; i++) {
+                order += rows[i].id+";";
+            }
+            document.getElementById('statbar').innerHTML = 'Speichert...';
+            loadPage("{/literal}{$LITO_ROOT_PATH_URL}{literal}acp/modules/acp_nav_edit/nav_edit.php?action=move&order="+order, '', 'GET', 'statbar');
+    	}
+    });
+});
+</script>
+<style type="text/css">
+.tDnD_whileDrag {
+background: #F05929;
+}
+</style>
+{/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}navi.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+					<p>Bitte w&auml;hlen sie das Design aus, in dem die Navigation ver&auml;nert werden soll</p>
+					<form method="GET"><p><select class="combo" name="design_id">
+					{foreach item=design from=$designs}
+					<option  value="{$design.id}" {if $design.id == $design_id}SELECTED{/if}>{$design.name}</option>
+					{/foreach}
+					</select><input class="button" type="submit"></p></form>
+
+				<div id="statbar">Die Navigation kann per Drag'n'Drop ver&auml;ndert werden.</div>
+		          <table class ="lito_table" id="table-1" width="700" border="0">
+						<tr id="up" class="nodrag nodrop"><td><h3>Obere Navigation</h3></td></tr>
+				  		<tr id="ign" class="nodrag nodrop">
+                                    <td>Titel</td>
+		    						<td>URL</td>
+		    						<td>Ingame</td>
+		    						<td>Aktionen</td>
+		  						</tr>
+				  			{foreach item=nav_line from=$navi_up}
+		  						{if $nav_line.change == true}
+				  				<form action="?action=change&id={$nav_line.id}&design_id={$design_id}" method="POST">
+				  				<tr id="{$nav_line.id}">
+				  				<td><input class="textinput" type="text" name="change_title" value="{$nav_line.title}"></td>
+				  				<td><input size="50" type="text" name="change_url" value="{$nav_line.url}"></td>
+				  				<td><input type="checkbox" name="change_ingame" value="1" {if $nav_line.ingame == 1}CHECKED{/if}></td>
+				  				<td><input class="button" type="submit"></td>
+				  				</tr>
+				  				</form>
+				  				{else}
+		  						<tr id="{$nav_line.id}">
+		  						<td>{$nav_line.title}</td>
+		  						<td>{$nav_line.url}</td>
+		  						<td>{if $nav_line.ingame == 0}<img height="20px" width="20px" src="{$LITO_ROOT_PATH_URL}acp/images/standard/acp_nav_edit/false.png" />{else}<img height="20px" width="20px" src="{$LITO_ROOT_PATH_URL}acp/images/standard/acp_nav_edit/true.png" />{/if}</td>
+		  						<td><a href="?action=change_select&id={$nav_line.id}&design_id={$design_id}"><img src="{$LITO_IMG_PATH}news_new.png" alt="editieren" title="editieren" width="20" height="20" border="0"></a> <a href="?action=delete&id={$nav_line.id}&design_id={$design_id}"><img src="{$LITO_IMG_PATH}delete.png" alt="l&ouml;schen" title="l&ouml;schen" width="20" height="20" border="0"></a></td>
+		  						</tr>
+		  						{/if}
+								{/foreach}
+						<tr id="left" class="nodrag nodrop"><td><h3>Rechte Navigation</h3></td></tr>
+				  			{foreach item=nav_line from=$navi_left}
+		  						{if $nav_line.change == true}
+				  				<form action="?action=change&id={$nav_line.id}&design_id={$design_id}" method="POST">
+				  				<tr id="{$nav_line.id}">
+				  				<td><input class="textinput" type="text" name="change_title" value="{$nav_line.title}"></td>
+				  				<td><input size="50" type="text" name="change_url" value="{$nav_line.url}"></td>
+				  				<td><input type="checkbox" name="change_ingame" value="1" {if $nav_line.ingame == 1}CHECKED{/if}></td>
+				  				<td><input class="button" type="submit"></td>
+				  				</tr>
+				  				</form>
+				  				{else}
+		  						<tr id="{$nav_line.id}">
+		  						<td>{$nav_line.title}</td>
+		  						<td>{$nav_line.url}</td>
+		  						<td>{if $nav_line.ingame == 0}<img height="20px" width="20px" src="{$LITO_ROOT_PATH_URL}acp/images/standard/acp_nav_edit/false.png" />{else}<img height="20px" width="20px" src="{$LITO_ROOT_PATH_URL}acp/images/standard/acp_nav_edit/true.png" />{/if}</td>
+		  						<td><a href="?action=change_select&id={$nav_line.id}&design_id={$design_id}"><img src="{$LITO_IMG_PATH}news_new.png" alt="editieren" title="editieren" width="20" height="20" border="0"></a> <a href="?action=delete&id={$nav_line.id}&design_id={$design_id}"><img src="{$LITO_IMG_PATH}delete.png" alt="l&ouml;schen" title="l&ouml;schen" width="20" height="20" border="0"></a></td>
+		  						</tr>
+		  						{/if}
+								{/foreach}
+						<tr id="right" class="nodrag nodrop"><td><h3>Linke Navigation</h3></td></tr>
+				  			{foreach item=nav_line from=$navi_right}
+				  				{if $nav_line.change == true}
+				  				<form action="?action=change&id={$nav_line.id}&design_id={$design_id}" method="POST">
+				  				<tr id="{$nav_line.id}">
+				  				<td><input class="textinput"  type="text" name="change_title" value="{$nav_line.title}"></td>
+				  				<td><input size="50" type="text" name="change_url" value="{$nav_line.url}"></td>
+				  				<td><input type="checkbox" name="change_ingame" value="1" {if $nav_line.ingame == 1}CHECKED{/if}></td>
+				  				<td><input class="button" type="submit"></td>
+				  				</tr>
+				  				</form>
+				  				{else}
+		  						<tr id="{$nav_line.id}">
+		  						<td>{$nav_line.title}</td>
+		  						<td>{$nav_line.url}</td>
+		  						<td>{if $nav_line.ingame == 0}<img height="20px" width="20px" src="{$LITO_ROOT_PATH_URL}acp/images/standard/acp_nav_edit/false.png" />{else}<img height="20px" width="20px" src="{$LITO_ROOT_PATH_URL}acp/images/standard/acp_nav_edit/true.png" />{/if}</td>
+		  						<td><a href="?action=change_select&id={$nav_line.id}&design_id={$design_id}"><img src="{$LITO_IMG_PATH}news_new.png" alt="editieren" title="editieren" width="20" height="20" border="0"></a> <a href="?action=delete&id={$nav_line.id}&design_id={$design_id}"><img src="{$LITO_IMG_PATH}delete.png" alt="l&ouml;schen" title="l&ouml;schen" width="20" height="20" border="0"></a></td>
+		  						</tr>
+		  						{/if}
+								{/foreach}
+						<tr id="ign" class="nodrag nodrop"><td><h3>Neu</h3></td></tr>
+						<form method="POST" action="?action=new&design_id={$design_id}">
+							<tr id="ign" class="nodrag nodrop">
+								<td><input class="textinput" type="text" name="title"></td>
+								<td><input size="50" name="url" type="text" value="[LITO_BASE_MODUL_URL]"></td>
+								<td><input type="checkbox" name="ingame" value="1"></td>
+								<td><input class="button" type="submit"></td></tr>
+						</form>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

@@ -1,0 +1,33 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}user.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+<form action="?action=chres&id={$countrie.id}" method="post">
+		              <h1>Ressourcen editieren</h1>
+		              <form action="?action=chres&id={$countrie.id}" method="post">
+				<p>Land: <input type="text" name="cname" value="{$countrie.name}"></p>
+				  <p>{$GLOBAL_RES1_NAME}: <input type="text" name="cres1" value="{$countrie.res1}"></p>
+				  <p>{$GLOBAL_RES2_NAME}: <input type="text" name="cres2" value="{$countrie.res2}"></p>
+				  <p>{$GLOBAL_RES3_NAME}: <input type="text" name="cres3" value="{$countrie.res3}"></p>
+				  <p>{$GLOBAL_RES4_NAME}: <input type="text" name="cres4" value="{$countrie.res4}"></p>
+				  <input type="submit" value="Speichern">
+				  </form>
+				  <p><a href="?action=main">Zur&uuml;ck</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>    
+
+    {include file="file:footer.html"}

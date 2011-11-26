@@ -1,0 +1,65 @@
+{include file="file:header.html"}
+ {literal}
+
+<script type="text/javascript">
+ {/literal}
+elemente=new Array({$ARRAY});
+{literal}
+
+var neue_id;
+var aktiv;
+
+function  check_1(id){
+var inhalt =document.getElementById('mod_id_'+id).innerHTML;
+	if (inhalt != ""){
+	window.clearInterval(aktiv);
+	document.getElementById('icon').style.visibility ='hidden';
+	}
+
+}
+
+function starte_konvert()
+{
+document.getElementById('icon').style.visibility ='visible';
+for (var i = 0; i < elemente.length; ++i) {
+  neue_id = elemente[i];
+	read_messag(neue_id,'mod_id_'+neue_id);
+}
+
+aktiv = window.setInterval('check_1(neue_id)', 1000);
+
+
+
+
+
+
+}
+
+</script>
+ {/literal}
+   <script type="text/javascript" src="{$LITO_ROOT_PATH_URL}acp/js/ajax.js"></script>
+ <script type="text/javascript" src="{$LITO_ROOT_PATH_URL}acp/js/helper.js"></script>
+
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}home.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+					<div class="stat">
+						<p><h1>Installationsergebniss</h1></p>
+				 		{$debug}
+				 	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

@@ -1,0 +1,36 @@
+{include file="file:header.html"}
+{literal}
+<script type="text/javascript">
+<!--
+function warn(){
+	if(confirm("Sind sie wirklich ganz sicher? Alle Spielerdaten werden verloren gehen!")){
+		location.href="?action=reset";
+	}
+}
+// -->
+</script>
+{/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}reset.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Spiel zurücksetzen</h1>
+		          <p><div style="border-style: none none dotted; border-color: -moz-use-text-color -moz-use-text-color red; border-width: 2px; color: red;"><b>Achtung!!!</b><br>
+		          Diese Funktion sollte nicht unbedacht verwendet werden, da alle Spielerdaten verloren gehen! Es wird empfohlen vor ausführen der Aktion die gesammte Datenbank zu sichern, sollten sie dies nicht tun werden einige Daten mit ausführen dieser Funktion unwiederruflich gelöscht!<br><b>Was wird gelöscht?</b><br>Es werden alle Daten die mit den Spielern zusammen hängen gelöscht, Gebäude, Forschungen usw. bleiben erhalten. Nach ausführen dieser Funktion sind somit auch alle Accounts gelöscht, der Admin Account bleibt erhalten.<br><b>Wann sollte diese Funktion ausgeführt werden?</b><br>Diese Funktion sollte nur ausgeführt werden, wenn das gesammte Spiel neu gestartet werden soll, das könnte beispielsweise der Fall sein, wenn die Beta Phase abgeschlossen ist und man allen Spielern eine neue Chance geben will.</div></p>
+		          <input type="button" value="Reset ausführen!" onclick="warn()">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

@@ -1,0 +1,126 @@
+{include file="file:header.html"}
+
+<div id="content">
+
+<!-- Informationen -->
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben"><span>{#MEMBERS_INFO#}</span></div>
+          
+          <div class="inhalt_box1">
+				    <table width="95%" border="0" align="center">
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_POINT#}</b></span></td>
+				    <td width="42%"><span class="normalfont">{$M_POINTS}</span></td>
+				  </tr>
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_C_NAME#}</b> [<a href="members.php?action=rename&amp;cxid=$sid">{#MEMBERS_C_RENAME#}</a>]</span></td>
+				    <td width="42%"><span class="normalfont">{$M_C_NAME}</span></td>
+				  </tr>
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_KOORDS#}</b></span></td>
+				    <td width="42%"><span class="normalfont">{$M_KOORDS}</span></td>
+				  </tr>
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_ALLI#}</b></span></td>
+				    <td width="42%"><span class="normalfont">
+				     {if $is_allianz== 1}
+				     	{$M_A_NAME}
+				     {else}
+				     		{#MEMEBERS_NO_A_ANAME#}
+				     {/if}
+				    </span></td>
+				  </tr>
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_LANDSIZE#}</b></span></td>
+				    <td width="42%"><span class="normalfont">{$M_LANDSIZE} / {$M_LANDSIZE_MAX}</span></td>
+				  </tr>
+				 <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_RACE#}</b></span></td>
+				    <td width="42%"><span class="normalfont">{$M_USER_RACE}</span></td>
+				  </tr> 
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{$GLOBAL_RES1_NAME} pro {$cur_res_reload_time} min. </b></span></td>
+				    <td width="42%"><span class="normalfont">{$production_res1}</span></td>
+				  </tr> 
+				   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{$GLOBAL_RES2_NAME} pro {$cur_res_reload_time} min. </b></span></td>
+				    <td width="42%"><span class="normalfont">{$production_res2}</span></td>
+				  </tr> 
+				   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{$GLOBAL_RES3_NAME} pro {$cur_res_reload_time} min. </b></span></td>
+				    <td width="42%"><span class="normalfont">{$production_res3}</span></td>
+				  </tr> 
+				   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{$GLOBAL_RES4_NAME} pro {$cur_res_reload_time} min. </b></span></td>
+				    <td width="42%"><span class="normalfont">{$production_res4} </span></td>
+				  </tr> 
+				   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td width="58%"><span class="normalfont"><b>{#MEMBERS_LAGER_SIZE#} </b></span></td>
+				    <td width="42%"><span class="normalfont">{$GLOBAL_STORE_SIZE} </span></td>
+				  </tr> 
+				  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}"> 
+				    <td  width="58%"><span class="normalfont"><b>{#MEMBERS_NEXT_CREDITS#}</b></span></td>
+				    <td width="42%"><div id="ress_time" >{$next4ressources} sec.</div></td>
+				  </tr> 
+				</table><br></div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<!-- Länder -->
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben"><span>{#MEMBERS_INFO_L#}</span></div>
+          
+          <div class="inhalt_box1"><table  width="95%" align="center">
+				 <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+				  <td width="20%"><span class="normalfont"><b>{#M_LANDNAME#}</b></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH_URL}res1_ico.png"  alt="{$GLOBAL_RES1_NAME}" title="{$GLOBAL_RES1_NAME}" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH_URL}res2_ico.png"  alt="{$GLOBAL_RES2_NAME}" title="{$GLOBAL_RES2_NAME}" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH_URL}res3_ico.png"  alt="{$GLOBAL_RES3_NAME}" title="{$GLOBAL_RES3_NAME}" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH_URL}res4_ico.png"  alt="{$GLOBAL_RES4_NAME}" title="{$GLOBAL_RES4_NAME}" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH}build.png"  alt="Gebäude" title="Gebäude" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH}explore.png"  alt="Forschung" title="Forschung" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH}build_units.png"  alt="Ausbildung" title="Ausbildung" ></span></td>
+				  <td width="10%"><span class="normalfont"><img src="{$LITO_IMG_PATH}build_def.png"  alt="Verteidigung" title="Verteidigung" ></span></td>
+				 </tr>
+				 {section name=mysec loop=$daten}
+	
+				   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+		      	<td class="normalfont"><a href="members.php?action=land_change&i={$daten[mysec].islandid}">{$daten[mysec].name}</a>  </td>
+						<td class="smallfont_black">{$daten[mysec].res1}</td>
+						<td class="smallfont_black">{$daten[mysec].res2}</td>
+						<td class="smallfont_black">{$daten[mysec].res3}</td>
+						<td class="smallfont_black">{$daten[mysec].res4}</td>
+						<td class="smallfont_black">{$daten[mysec].build}</td>
+						<td class="smallfont_black">{$daten[mysec].explore}</td>
+						<td class="smallfont_black">{$daten[mysec].units}</td>
+						<td class="smallfont_black">{$daten[mysec].def}</td>
+   				</tr>
+
+{/section}
+
+				</table><br></div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}

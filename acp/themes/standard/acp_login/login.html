@@ -1,0 +1,27 @@
+{include file="file:header.html"}
+
+     {if $if_login_error == 1}
+     <div id="error">
+<table border="0">
+    <tr>
+      <td><img src="{$LITO_IMG_PATH}/error.png"/></td>
+      <td>{$LITO_ERROR_MSG}</td>
+    </tr>
+</table>
+ 	</div>
+     {/if}
+    <div id="login">
+         <p><img src="{$LITO_IMG_PATH}logo.jpg" width="222" height="58" alt="dsf" /></p>
+      <hr/>
+      <form action="login.php?action=submit" method="post">
+     <p><em>Benutzername</em>
+      <input class="login_box" name="username" type="text" value="" maxlength="255" /></p>
+     <p><em>Kennwort</em>
+      <input class="login_box" name="password" type="password" value="" maxlength="255" /></p>
+     <p>
+      <input name="index.htm" type="submit" class="login_box_absenden" id="index.htm" value="Absenden" />
+     </p>
+     </form>
+    </div>
+    {include file="file:footer.html"}
+</div>

@@ -1,0 +1,26 @@
+<?PHP
+ELELM_DESC1="Top 10"
+ELELM_DESC2="User"
+ELELM_DESC3="Allianz"
+ELELM_DESC4="Spieler suchen"
+ELELM_DESC5="Platz"
+ELELM_DESC6="Status"
+ELELM_DESC7="Rasse"
+ELELM_DESC8="Punkte"
+ELELM_DESC9="Anzahl Länder"
+ELELM_DESC10="Nachricht"
+ELELM_DESC11="Nachricht senden"
+ELELM_DESC12="Name"
+ELELM_DESC13="Letzter Login"
+ELELM_DESC14="Kurztext"
+ELELM_DESC15="Flagge"
+ELELM_DESC16="Mitglieder"
+
+ELEMENT1 = "Anzahl Spieler"
+ELEMENT2="Anzahl gesperrte Spieler"
+ELEMENT3="Anzahl aktive Spieler"
+ELEMENT4="Kartengr&ouml;&szlig;e"
+ELEMENT5="Anzahl L&auml;nder"
+ELEMENT6="Anzahl freie L&auml;nder"
+
+?>

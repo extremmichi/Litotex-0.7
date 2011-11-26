@@ -1,0 +1,95 @@
+{include file="file:header.html"}
+{$TIME_BANNER_INIT}
+
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#BUILD_UNITS_18#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <table  width="100%" align="center">
+     <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+      <th width="25%"><span class="normalfont"><b>{#BUILD_UNITS_1#}</b></span></th>
+      <th width="15%"><span class="normalfont"><b>{#BUILD_UNITS_5#}</b></span></th>         
+      <th width="20%"><span class="normalfont"><b>{#BUILD_UNITS_8#}</b></span></th>
+      <th width="20%"><span class="normalfont"><b>{#BUILD_UNITS_9#}</b></span></th>
+      <th width="20%"><span class="normalfont"><b>{#BUILD_UNITS_6#}</b></span></th>
+     </tr>{foreach item=con2 from=$loop}
+     <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+      <td valign="top" width="25%">{$con2[1]}</td>
+      <td valign="top" width="15%">{$con2[2]}</td>
+      <td valign="top" width="20%">{$con2[3]}</td>
+      <td valign="top" width="20%">{$con2[4]}</td>
+      <td valign="top" width="20%">{$con2[5]}</td>
+     </tr>
+	{if $con[0] =='1'}
+	{else}
+	{/if}{/foreach}
+    </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+{foreach item=con1 from=$daten}
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+			<table width="100%" border="0">
+              <tr align="center">
+                <td width="33%"><b>{$con1[1]}</b></td>
+                <td width="33%"><b>{#BUILD_UNITS_4#}</b> {$con1[7]}</td>
+                <td width="33%"><b>{#BUILD_UNITS_13#}</b> {$con1[8]}</td>
+              </tr>
+            </table>
+          </div> 
+                                                          
+          <div class="inhalt_box1">
+          <table width="100%" border="0">
+              <tr valign="top">
+                <td width="5%"><img border="0" src={$con1[0]}></td>
+                <td width="50%"><strong>{#BUILD_UNITS_1#} / {#BUILD_UNITS_2#}</strong>
+                  <br>{$con1[2]}
+                  </td>
+                <td width="25%"><strong>{#BUILD_UNITS_3#}</strong>
+                  <table width="100%" border="0">
+                    <tr>
+                      <td width="60%"><span class="normalfont">{$con1[3]}</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="normalfont">{$con1[4]}</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="normalfont">{$con1[5]}</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="normalfont">{$con1[6]}</span></td>
+                    </tr>
+                  </table>
+                  </td>
+                <td width="20%"><form action={$con1[9]} method="post"><input class="textinput" type="text" value={$con1[10]} name="num" size="3"><br /><br /><input type="submit" class="button" value={#BUILD_UNITS_7#}></form></td>
+              </tr>
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+{/foreach}
+</div>
+{include file="file:footer.html"}
+

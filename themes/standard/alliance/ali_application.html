@@ -1,0 +1,25 @@
+{include file="file:header.html"}
+<div id="content">
+
+          {#ln_allianz_b_1#} <b>{$aliname}</b>
+        
+			<form action="alliance.php?action=bewerben_go&id={$id}" method="post">
+              <p>{#ln_allianz_b_2#}
+              <center><table width="80%" align="center">
+                <tr> 
+                  <td  width="15%" valign="top"><b>{#ln_allianz_b_3#}</b></td>
+                  <td width="15%"><textarea class="textfeld" id="b_text" name="b_text" cols="40" rows="8"></textarea></td>
+                </tr>
+                <tr> 
+                  <td  colspan="6"><center>
+                      <input type="submit" value="{#ln_allianz_b_4#}" class="button" accesskey="L">
+                    </center></td>
+                </tr>
+              </table>
+              </center>
+</form>
+      
+<br>
+
+</div>
+{include file="file:footer.html"}

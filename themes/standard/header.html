@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>{$GAME_TITLE_TEXT}</title>
+<link href="{$LITO_MAIN_CSS}/litotex.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}js/scriptaculous/prototype.js"></script>
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}js/scriptaculous/window.js"></script>
+<link href="{$LITO_MAIN_CSS}/themes/alphacube.css" rel="stylesheet" type="text/css"/>
+<link href="{$LITO_MAIN_CSS}/themes/default.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}js/wz_tooltip.js"></script>
+<div id="wrapper">
+
+<div id="header">
+   	<div id="date"> {$smarty.now|date_format:"%A, %e %B, %Y"} {$smarty.now|date_format:"%H:%M:%S"} | <a href="{$LITO_MODUL_PATH_URL}impressum/impressum.php">Impressum</a> | <a href="{$con[3]}"><img src="{$LITO_GLOBAL_IMAGE_URL}logout.png" alt="" border="0" /></a> <a href="{$LITO_MODUL_PATH_URL}login/logout.php">Logout</a> | <a href="#"> <img src="{$LITO_GLOBAL_IMAGE_URL}flag_en.png" width="25" height="14" border="0" /></a></div>
+<div id="logo">
+<table border="0">
+  <tr>
+    <td><a href="{$LITO_ROOT_PATH_URL}"><img src="{$LITO_GLOBAL_IMAGE_URL}logo.jpg" width="222" height="58" border="0" /></a></td>
+    <td id="werbung">{$GLOBAL_BANNERCODE}</td>
+  </tr>
+</table>
+</div>
+	{if $IS_LOGED_IN =='0' }
+<div id="login">
+      <form action="{$LITO_MODUL_PATH_URL}login/login.php?action=submit" name="frm_login" method="post">
+        <p><em>Benutzername</em>
+      <input class="textinput" name="username" type="text" value="" maxlength="255" /></p>
+     <p><em>Kennwort</em>
+      <input class="textinput" name="password" type="password" value="" maxlength="255" />
+     </p>
+     <p> <a href="{$LITO_MODUL_PATH_URL}register/register.php?action=forgott">Passwort vergessen?</a> | <a href="#" onClick="document.frm_login.submit();">Login</a></p>
+     </form>
+    </div>
+{else}
+  <div id="resbox"><strong>Land:</strong><br /> 
+    {$CURRENT_LAND_NAME} ({$CURRENT_LAND_POS})
+  <div id="ress1" ><img src="{$LITO_IMG_PATH_URL}res1_ico.png"> {$GLOBAL_RES1_NAME} {$CURRENT_LAND_RES1}</div>
+  <div id="ress2" ><img src="{$LITO_IMG_PATH_URL}res2_ico.png"> {$GLOBAL_RES2_NAME} {$CURRENT_LAND_RES2}</div>
+  <div id="ress3" ><img src="{$LITO_IMG_PATH_URL}res3_ico.png"> {$GLOBAL_RES3_NAME} {$CURRENT_LAND_RES3}</div>
+  <div id="ress4" ><img src="{$LITO_IMG_PATH_URL}res4_ico.png"> {$GLOBAL_RES4_NAME} {$CURRENT_LAND_RES4}</div>
+  <!--<div id="logout" ><a href="{$LITO_MODUL_PATH_URL}login/logout.php">Logout</a></div>-->
+</div>
+{/if}
+{$LITO_NAVIGATION}
+<div class="subnavi">
+{$LITO_NAVIGATION_1} 	
+</div> 
+<div class="subnavi">
+{$LITO_NAVIGATION_2} 	
+</div>

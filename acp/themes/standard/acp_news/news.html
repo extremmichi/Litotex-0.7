@@ -1,0 +1,48 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}news.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat">
+
+								{#NEWS_LIST_TEXT#}<br><br>
+
+								<table class ="lito_table" width="700" border="0" >
+								    <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+								      <td>{#NEWS_ID_TEXT#}</td>
+											<td>{#NEWS_DATUM_TEXT#}</td>
+											<td>{#NEW_NEWS_OVER_TEXT#}</td>
+											<td>{#NEWS_IS_ACTIV_TEXT#}</td>
+											<td>{#NEWS_DELETE_TEXT#}</td>
+								   </tr>
+
+										{foreach item=con from=$daten}
+										   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+										      <td>{$con[0]}</td>
+													<td>{$con[1]}</td>
+													<td>  <a href="news.php?action=edit&id={$con[0]}" onmouseover="Tip('<table width=\'100%\' border=\'0\' bordercolor=\'#666666\' cellspacing=\'0\'><tr><td bgcolor=\'#7B86AD\'><font color=\'#FFFFFF\' size=\'2\'>NEWS:</font></td></tr><tr><td bgcolor=\'#9CA2BD\'><font color=\'#FFFFFF\' size=\'2\'>{$con[2]}</font></td></tr></table>')" onmouseout="UnTip()">{$con[3]}</a></td>
+															{if $con[4] =='1' }
+																<td width="20%"><a href="news.php?action=activate&id={$con[0]}"><img src="{$LITO_IMG_PATH}deactive.png" alt="{#NEWS_DEACTIVATE_TEXT#}" title="{#NEWS_DEACTIVATE_TEXT#}" width="20" height="20" border="0"></a></td>
+															{else}
+																<td width="20%"><a href="news.php?action=activate&id={$con[0]}"><img src="{$LITO_IMG_PATH}active.png" alt="{#NEWS_ACTIVATE_TEXT#}" title="{#NEWS_ACTIVATE_TEXT#}" width="20" height="20" border="0"></a></td>
+															{/if}
+													   <td width="20%"><a href="news.php?action=delete&id={$con[0]}"><img src="{$LITO_IMG_PATH}delete.png" alt="{#NEWS_DELETE_TEXT#}" title="{#NEWS_DELETE_TEXT#}" width="20" height="20" border="0"></a></td>
+										   </tr>
+									   {/foreach}
+							</table>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="file:footer.html"}

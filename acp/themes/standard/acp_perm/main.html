@@ -1,0 +1,29 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}gruppe.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Berechtigungseditor</h1>
+		          <p>Berechtigungen sind in Level unterteilt, jedes Administrationsmodul kann ein eigenes Level haben,<br />
+jeder User kann ebenfalls ein eigenes Level haben. Ist das User Level gr&ouml;&szlig;er oder gleich dem <br />
+Level des Moduls, kann der User dieses Modul benutzen, andernfalls wird der Zugriff verboten!</p>
+		          <p><h3>Bitte w&auml;hlen sie aus:</h3></p>
+		          <p><a href="?action=listmod">Modullevel &auml;ndern</a></p>
+		          <p><a href="{$LITO_MODUL_PATH_URL}acp_usermgr/usermgr.php">Userlevel &auml;ndern</a></p>
+		          <p><a href="?action=listgroup">Gruppen &auml;ndern</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

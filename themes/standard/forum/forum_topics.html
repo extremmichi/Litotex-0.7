@@ -1,0 +1,48 @@
+{include file="file:header.html"}
+<link href="{$LITO_MAIN_CSS}/forum.css" rel="stylesheet" type="text/css" />
+<div id="content">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+	  <tr>
+		<td valign="top" width="90%" >
+			<table width="98%" border="0" cellspacing="0" cellpadding="0">
+			  <tr>
+				<td class="forum_cell_def" width="5%"><span class="forum_navi_text"></span></td>
+				<td class="forum_cell_def" width="95%"><span class="forum_navi_text">{$ft_parent}</span></td>
+			  </tr>
+			</table>
+			<br>
+					<table width="100%" class="forum_def">
+					 <tr>
+					  <td class="forum_tabl_def" width="25px"></td>
+					  <td class="forum_tabl_def" width="50%">{#ln_forum_o_2#}</td>
+					  <td class="forum_tabl_def" width="5%">{#ln_forum_o_3#}</td>
+					  <td class="forum_tabl_def" width="5%">{#ln_forum_o_4#}</td>
+					  <td class="forum_tabl_def" width="20%">{#ln_forum_o_5#}</td>
+					  <td class="forum_tabl_def" width="20%">{#ln_forum_o_6#}</td>
+					 </tr>
+					 
+					
+ {foreach item=con from=$forum_t_data}					
+	<tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+	  <td  width="25px">{$con.f_pic}</td>
+	  <td width="50%"><b>{$con.ft_title}</b><br>{$con.f_descr}</td>
+	  <td width="5%"><span class="forum_normal_text">{$con.ft_anzahl}</span></td>
+	  <td width="5%"><span class="forum_normal_text">{$con.ft_views}</span></td>
+	  <td width="20%"><span class="forum_normal_text">{$con.ft_creator}</span><br><span class="forum_smal_text">{$con.ft_creator_time}</span></td>
+	  <td width="20%"><span class="forum_normal_text">{$con.ft_last_post_name}</span><br><span class="forum_smal_text">{$con.ft_last_post_time}</span></td>
+	</tr>
+  {/foreach}					 
+					
+					</table>
+<br><br>
+				<table width="98%" >
+				  <tr>
+					<td align="right"><div align="right">{$new_thema}</div></td>
+				  </tr>
+				</table>
+</td>
+</tr>
+</table>
+
+</div>
+{include file="file:footer.html"}

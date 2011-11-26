@@ -1,0 +1,45 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}gruppe.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Berechtigungseditor</h1>
+		          <h3>Gruppen</h3>
+		          <form action="?action=save_grp" method="POST">
+		          <table width="700">
+			          <tr>
+			          	<td>Gruppenname</td>
+			          	<td>Berechtigungslevel</td>
+			          </tr>
+			         {foreach item=group from=$groups}
+			          <tr>
+			          	<td><input type="text" name="name[{$group.id}]" value="{$group.name}"></td>
+			          	<td><input type="text" name="perm[{$group.id}]" value="{$group.perm}"></td>
+			          </tr>
+			         {/foreach}
+			         <tr>
+			         	<td><h3>Neu</h3></td>
+			         </tr>
+			         <tr>
+			         	<td><input name="new_name" type="text"></td>
+			         	<td><input name="new_lvl" type="text"></td>
+			         </tr>
+		          </table>
+		          <div align="right"><input class="button" type="submit"></div>
+		          </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

@@ -1,0 +1,49 @@
+{include file="file:header.html"}
+<link href="{$LITO_MAIN_CSS}/forum.css" rel="stylesheet" type="text/css" />
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#ln_forum_o_1#}</div> 
+                                                          
+          <div class="inhalt_box1">
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+            <td valign="top" width="80%"><center>
+            <table class="forum_def">
+             <tr>
+              <td class="forum_tabl_def" width="5%"></td>
+              <td class="forum_tabl_def" width="100%">{#ln_forum_o_1#}</td>
+              <td class="forum_tabl_def" width="10%">{#ln_forum_o_2#}</td>
+              <td class="forum_tabl_def" width="10%">{#ln_forum_o_3#}</td>
+             </tr>
+            
+            
+             {foreach item=con from=$forum_data}
+              <tr style="background-color:{cycle values="#eeeeee,#dddddd"}">
+                <td class="forum_cell_def" width="25px">{$con.f_pic}</td>
+                <td class="forum_cell_def" width="100%"><b>{$con.f_name}</b><br>{$con.f_descr}</td>
+                <td class="forum_cell_def" width="10%">{$con.f_count_topic}</td>
+                <td class="forum_cell_def" width="10%">{$con.f_count_post}</td>
+                </tr>
+              {/foreach}
+            
+            </table>
+            
+            </td>
+            </tr>
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}

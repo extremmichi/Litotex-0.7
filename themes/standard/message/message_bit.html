@@ -1,0 +1,26 @@
+ <tr>
+  <td width="5%">
+  <span class="normalfont"><b>$pri</b>
+  <if($row['isnew']==1)><then> 
+	  <img src="./images/new.png" alt="neu" title="neu">
+	  </then>
+	  <else>
+	  </else>
+	</if>
+	</span>
+  </td>
+  <td width="10%"><span class="normalfont"><a href="users.php?id=$row[fromuserid]&cxid=$sid">$row[username]</a></span></td>
+  <td width="20%"><span class="normalfont"><a href="message.php?action=lookup&pmid=$row[pmid]&cxid=$sid">$row[subject]</a></span></td>
+  <td width="15%"><span class="normalfont">$time</span></td>
+  <td width="15%"><a href="message.php?action=remove&pmid=$row[pmid]">
+  <img src="./images/loeschen.png" alt="l&ouml;schen" title="l&ouml;schen" border="0"></a> 
+
+   <if($is_archiv == 0)><then> 
+  		<a href="message.php?action=move&to=archive&cxid=$sid&pmid=$row[pmid]">
+  		<img src="./images/archive.png" alt="ins Archiv verschieben" title="ins Archiv verschieben" border="0"></a>
+  </then>
+	  <else>
+	  </else>
+	</if>
+  <input type="checkbox" name="checkbox[$row[pmid]]"></td>
+ </tr>

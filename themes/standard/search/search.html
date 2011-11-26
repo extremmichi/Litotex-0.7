@@ -1,0 +1,70 @@
+{include file="file:header.html"} 
+<div id="content"> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#SERACH_TEXT#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <p>{#SERACH_TEXT_0#}</p>
+          <form action="search.php?action=user" method="post">
+  <table width="486" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="180">{#SERACH_TEXT_1#}</td>
+    <td width="210"><input type="text" class="textBox" name="user"></td>
+    <td width="90"> <input type="submit" class="button" value="{#BUTTON_TEXT#}"></td>
+  </tr>
+</table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben"></div> 
+                                                          
+          <div class="inhalt_box1">
+          <table class ="lito_table" width="90%" border="0">
+ <tr>
+  <td width="40%">{#SEARCH_IMG#}</td>
+  <td width="20%">{#SEARCH_UNAME#}</td>
+  <td width="10%">{#SEARCH_POINTS#}</td>
+  <td width="20%">{#SEARCH_ALI#}</td>
+  <td width="10%">{#SEARCH_LAST#}</td>
+  </tr>
+ 
+ 		  						{foreach item=con from=$daten}
+		  							<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		  							<td width="20%"><img src="{$con.image}"></td>
+		  							<td width="40%">{$con.message} {$con.profile_link} {$con.u_online} 
+		  							<td width="10%">{$con.u_points}</td>	
+			  						<td width="20%">{$con.alianz}</td>	
+		  							<td width="10%">{$con.lastlogin}</td>	
+		  							
+		  							
+			
+								{/foreach}
+ 
+</table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+    {include file="file:footer.html"}

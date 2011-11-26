@@ -1,0 +1,39 @@
+{include file="file:header.html"}
+<div id="content">
+
+<br>
+<table  width="100%" align="center">
+ <tr>
+  <th  colspan="2"><span class="normalfont"><b>{#ln_allis_4#}</b></span></th>
+ </tr>
+   <tr>
+  <td  colspan="2"><div align="center"><img src="{$banner}"></div></td>
+ </tr>
+ <tr>
+  <td  width="15%"><span class="normalfont"><b>{#ln_allis_2#}</b></span></td>
+  <td  width="45%"><span class="normalfont">{$name}</span></td>
+ </tr>
+  <tr>
+  <td  width="15%"><span class="normalfont"><b>{#ln_allis_3#}</b></span></td>
+  <td  width="45%"><span class="normalfont">{$text}</span></td>
+ </tr>
+ <tr>
+  <td  width="15%"><span class="normalfont"><b>{#ln_allianz_kick_2#}</b></span></td>
+  <td  width="45%"><span class="normalfont">{$points}</span></td>
+ </tr>
+ <tr>
+  <td  width="15%"><span class="normalfont"><b>{#ln_admin_e_17#}</b></span></td>
+  <td  width="45%"><span class="normalfont">{$ibit}</span></td>
+ </tr>
+  <tr>
+  <td  colspan="2"><div align="center">{$description}</div></td>
+ </tr>
+</table>
+<br><br><center>
+{if $is_in_ali =='0' }
+<a href="alliance.php?action=bewerben&id={$ali_id}"><span class="yellow">{#ln_allianz_b_5#}</span></a> 
+{/if}
+</center>
+
+</div>
+{include file="file:footer.html"}

@@ -1,0 +1,84 @@
+{include file="file:header.html"}
+<div id="content">
+
+<center>{#ln_allianz_forum_4#}</center><br />
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+            <table border="0" width="100%">
+            <tr>
+              <td align="left"><a href="alliance.php">{#ln_allianz_c_r_11#}</a></td>
+              <td align="right"><b>{#ln_allianz_forum_5#}</b></td>
+            </tr>
+          </table>
+            </div> 
+                                                          
+          <div class="inhalt_box1">
+          <table width="100%" border="0" >
+            <tr> 
+              <td >{#ln_allianz_forum_6#}</td>
+              <td >{#ln_allianz_forum_7#}</td>
+              <br>
+              <td >{#ln_allianz_forum_8#}</td>
+            </tr>
+            {foreach item=con from=$ali_forum}
+            <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                <td class="tabl_cells">{$con.katname}</td>
+                <td class="tabl_cells">{$con.description}</td>
+                <td class="tabl_cells"><a href="alliance.php?action=change_forum_del&forumid={$con.forum_id}"><img src="{$LITO_IMG_PATH}button_cancel.png" border="0"></a> </td>
+            </tr>
+            {/foreach}
+            
+          </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben"><b>{#ln_allianz_forum_9#}</b></div> 
+                                                          
+          <div class="inhalt_box1">
+                        <form action="alliance.php?action=change_forum_s" method="post">
+                <table  width="90%" align="center">
+                  <tr> 
+                    <td  width="23%"><div align="left"><span class="normalfont"><b>{#ln_allianz_forum_9#}</b></span></div></td>
+                    <td  width="77%"><div align="left"> 
+                        <input name="boards" type="text" class="textinput" value="{$allianz_boards}" size="80">
+                      </div></td>
+                  </tr>
+                  <tr> 
+                    <td  width="23%"><div align="left"><span class="normalfont"><b>{#ln_allianz_forum_10#}</b></span></div></td>
+                    <td  width="77%"><div align="left"> 
+                        <input name="descript" type="text" class="textinput" value="{$descript}" size="80">
+                      </div></td>
+                  </tr>
+                  <td  colspan="6"> <div align="right"> 
+                      <input type="submit" class="button" value="{#ln_allianz_forum_11#}">
+                    </div></td>
+                  </tr>
+                </table>
+              </form>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+        
+</div>
+{include file="file:footer.html"}          

@@ -1,0 +1,50 @@
+{include file="file:header.html"}
+
+
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}home.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>Startseite</i></h1></td>
+    </tr>
+</table>
+<!-- Statistik -->
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+					<div class="stat">
+						<p>{html_table loop=$data cols="Beschreibung,Anzahl" tr_attr=$tr table_attr='border="0" cellpadding="0" 			cellspacing="0"' td_attr='width="170" '}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Statistik ende -->
+
+<!-- Statistik -->
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+					<div class="stat">
+						<p>{html_table loop=$land cols="Beschreibung,Anzahl" tr_attr=$tr table_attr='border="0" cellpadding="0" 			cellspacing="0"' td_attr='width="170" '}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Statistik ende -->
+
+
+
+
+
+
+
+</div>
+
+{include file="file:footer.html"}

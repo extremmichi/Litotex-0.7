@@ -1,0 +1,70 @@
+{include file="file:header.html"}
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{$MESSAGE_COUNT} {#LN_MESSAGE_25#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <form method="get" action="./message.php">
+          <table class="table_over" width="100%" align="center">
+            <tr>
+                <td   width="5%"><span class="normalfont"><b>{#LN_MESSAGE_1#}</b></span></td>
+                <td   width="10%"><span class="normalfont"><b>{#LN_MESSAGE_2#}</b></span></td>
+                <td   width="20%"><span class="normalfont"><b>{#LN_MESSAGE_3#}</b></span></td>
+                <td   width="15%"><span class="normalfont"><b>{#LN_MESSAGE_4#}</b></span></td>
+                <td   width="15%"><span class="normalfont"><b>{#LN_MESSAGE_5#}</b></span></td>
+            </tr>
+          {foreach item=con from=$message_inbox}
+            <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+            <td width="5%">
+            <span class="normalfont"><b>{$con.pri}</b>
+{if $con.newpm == 1}
+            <img src="{$LITO_IMG_PATH}newpost.png" alt="neu" title="neu">
+{/if}
+              </span>
+            </td>
+            <td width="10%"><span class="normalfont">{$con.profile_link}</span></td>
+            <td width="20%"><span class="normalfont"><a href="message.php?action=lookup&pmid={$con.pmid}">{$con.subject}</a></span></td>
+            <td width="15%"><span class="normalfont">{$con.message_time}</span></td>
+            <td width="15%"><a href="message.php?action=remove&pmid={$con.pmid}">
+            <img src="{$LITO_IMG_PATH}delete.png" alt="l&ouml;schen" title="{#LN_MESSAGE_6#}" border="0"></a> 
+
+{if $con.is_archive == 0}
+            <a href="message.php?action=move&to=archive&cxid=$sid&pmid={$con.pmid}">
+            <img src="{$LITO_IMG_PATH}archive.png" alt="{#LN_MESSAGE_7#}" title="{#LN_MESSAGE_7#}" border="0"></a>
+{/if}
+            <input type="checkbox" name="checkbox[{$con.pmid}]"></td>
+            </tr>
+          {/foreach}
+          </table>
+          </div>
+
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+<center>
+    <span class="normalfont">
+       
+        <select class="combo" name="todo" size="1">
+            <option value="1">{#LN_MESSAGE_8#}</option>
+            <option value="2">{#LN_MESSAGE_9#}</option>
+            <option value="3">{#LN_MESSAGE_10#}</option>
+        </select>
+        <input type="submit" class ="button" name ="action" value="{#LN_MESSAGE_11#}">
+    </span>
+    <br><br>
+    <button name="aktion" class="button" type="button"  value="Neu" onClick="self.location.href='message.php?action=send'">{#LN_MESSAGE_12#}</button>
+		<button name="aktion" class="button" type="button"  value="Neu" onClick="self.location.href='message.php?folder=archive'">{#LN_MESSAGE_13#} ({$ARCHIV_COUNT})</button>
+    
+</center>
+
+</div>
+{include file="file:footer.html"}

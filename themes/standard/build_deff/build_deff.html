@@ -1,0 +1,97 @@
+{include file="file:header.html"}
+{$TIME_BANNER_INIT}
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#BUILD_DEFF_16#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <table  width="100%" align="center">
+{foreach item=con2 from=$loop}
+{if $con2[0] =='1'}
+ <tr>
+  <th width="25%"><span class="normalfont"><b>{#BUILD_DEFF_1#}</b></span></th>
+  <th width="15%"><span class="normalfont"><b>{#BUILD_DEFF_2#}</b></span></th>         
+  <th width="20%"><span class="normalfont"><b>{#BUILD_DEFF_3#}</b></span></th>
+  <th width="20%"><span class="normalfont"><b>{#BUILD_DEFF_4#}</b></span></th>
+  <th width="20%"><span class="normalfont"><b>{#BUILD_DEFF_5#}</b></span></th>
+ </tr>
+{else}
+{/if} 
+ <tr>
+  <td valign="top" width="25%">{$con2[1]}</td>
+  <td valign="top" width="15%">{$con2[2]}</td>
+  <td valign="top" width="20%">{$con2[3]}</td>
+  <td valign="top" width="20%">{$con2[4]}</td>
+  <td valign="top" width="20%">{$con2[5]}</td>
+ </tr>
+{/foreach}
+</table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+
+{foreach item=con1 from=$daten}
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten"> 
+            <table width="100%" border="0">
+              <tr align="center">
+                <td width="33%">{$con1[1]}</td>
+                <td width="33%"><b>{#BUILD_DEFF_9#}</b> {$con1[7]}</td>
+                <td width="33%"><b>{#BUILD_DEFF_2#}</b> {$con1[8]}</td>
+              </tr>
+            </table>
+          </div>                            
+          <div class="inhalt_box1">
+            <table border="0" width="100%">
+              <tr valign="top">
+                <td width="5%"><img border="0" src={$con1[0]}></td>
+                <td width="50%"><b>{#BUILD_DEFF_7#}</b>
+                  <p>{$con1[2]}</p>
+                  <br>{#BUILD_DEFF_14#}: {$con1[11]}
+                  <br>{#BUILD_DEFF_15#}: {$con1[12]}</td>
+                <td width="25%"><b>{#BUILD_DEFF_8#}</b>
+                      <p><table width="100%" border="0">
+                        <tr>
+                          <td><span class="normalfont">{$con1[3]}</span></td>
+                        </tr>
+                        <tr>
+                          <td><span class="normalfont">{$con1[4]}</span></td>
+                        </tr>
+                        <tr>
+                          <td><span class="normalfont">{$con1[5]}</span></td>
+                        </tr>
+                        <tr>
+                          <td><span class="normalfont">{$con1[6]}</span></td>
+                        </tr>
+                      </table></p>
+                  </td>
+                <td width="20%"><b>{#BUILD_DEFF_5#}</b><p><form action={$con1[9]} method="post"><input type="text" class="textinput" value={$con1[10]} name="num" size="3"></p><p><input class="button" type="submit" value={#BUILD_DEFF_10#}></form></p></td>
+              </tr>
+            </table>
+        </div>
+        	 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+{/foreach}
+</div>
+{include file="file:footer.html"}
+

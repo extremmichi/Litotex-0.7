@@ -1,0 +1,181 @@
+{include file="file:header.html"}
+{literal}
+<script language="javascript">
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "simple",
+		theme_advanced_toolbar_location:'top',
+		theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+		theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor"
+	});
+</script>
+<script type="text/javascript">
+<!--
+function compare_race(){
+	if(document.getElementById('cpfrom').value == document.getElementById('cpto').value){
+		alert('Kopieren auf die gleiche Rasse ist nicht möglich!');
+	} else
+		document.getElementById('cp').submit();
+}
+//-->
+</script>
+ {/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}units.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+
+
+		           <h4>Einstellungen kopieren</h4>
+		           <form id="cp" action="?action=cp" method="POST">
+		           Von: <select class="combo" id="cpfrom" name="cpfrom">{foreach item=con from=$race_all}
+    	<option value="{$con.rassenid}">{$con.rassenname}</option>
+    {/foreach}</select>
+
+Nach: <select class="combo" id="cpto" name="cpto">{foreach item=con from=$race_all}
+    	<option value="{$con.rassenid}">{$con.rassenname}</option>
+    {/foreach}</select>
+<input value="kopieren" class="button" type="button" onclick="compare_race()"></form>
+    <h4>Editor</h4>
+<table class ="lito_table" width="900" border="0">
+		<tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+    <td>Beschreibung</td>
+    	{foreach item=con from=$race_all}
+    	<td>{$con.rassenname}</td>
+    {/foreach}
+</tr>
+{foreach item=con from=$units}
+    				  			<tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+    								<td>{$con.0}</td>
+     				  		<td>{$con.1}</td>
+    				  		<td>{$con.2}</td>
+    				  		<td>{$con.3}</td>
+    				  		<td>{$con.4}</td>
+    				  		</tr>
+								{/foreach}
+</table>
+
+
+
+
+<br><br>
+<center>
+<a href="edit_units.php"><span class="bluefont"><b>neue Einheit festlegen</b></span></a><br>
+<br>
+</center>
+<form name="building_new" method="post" action="edit_units.php?{$make_aktion}">
+  <table   width="100%" align="center">
+    <tr>
+      <td width="43%"  ><b>Rasse</b></td>
+      <td colspan="2" >{$ras}</td>
+      <td width="23%" rowspan="13" align="center" valign="top" ><img src="{$load_b_pic}" >
+      </td>
+    </tr>
+    <tr>
+      <td >Einheitenoptionen</td>
+      <td colspan="2" >{$build_option}</td>
+    </tr>
+    <tr>
+      <td >Einheitenart</td>
+      <td colspan="2" >{$sol_type_def}</td>
+    </tr>
+    <tr>
+      <td >Name</td>
+      <td colspan="2" ><input class="textinput" type="text" name="buildingname" value="{$load_name}"></td>
+    </tr>
+    <tr>
+      <td >Kosten</td>
+      <td colspan="2" ><input class="textinput" type="text" name="kost1" value="{$load_ress_1}"></td>
+    </tr>
+    <tr>
+      <td >Kosten</td>
+      <td colspan="2" ><input class="textinput" type="text" name="kost2"  value="{$load_ress_2}"></td>
+    </tr>
+    <tr>
+      <td >Kosten</td>
+      <td colspan="2" ><input class="textinput" type="text" name="kost3" value="{$load_ress_3}"></td>
+    </tr>
+    <tr>
+      <td >Kosten</td>
+      <td colspan="2" ><input class="textinput" type="text" name="kost4"  value="{$load_ress_4}"></td>
+    </tr>
+    <tr>
+      <td >Reisezeit</td>
+      <td colspan="2" ><input class="textinput" type="text" name="traveltime" value="{$load_size}"></td>
+    </tr>
+    <tr>
+      <td >Punkte pro Einheit</td>
+      <td colspan="2" ><input class="textinput" type="text" name="points"  value="{$load_points}"></td>
+    </tr>
+    <tr>
+      <td >Bauzeit in Sekunden</td>
+      <td colspan="2" ><input class="textinput" type="text" name="buildtime" value="{$load_buildtime}"></td>
+    </tr>
+    <tr>
+      <td >Angriffspunkte</td>
+      <td colspan="2" ><input class="textinput" type="text" name="value_ap" value="{$load_ap}"></td>
+    </tr>
+    <tr>
+      <td >Verteidigungspunkte</td>
+      <td colspan="2" ><input class="textinput" type="text" name="value_vp" value="{$load_vp}"></td>
+    </tr>
+    <tr>
+      <td >Voraussetzung</td>
+      <td width="21%" >{$required}</td>
+      <td width="13%" align="right" >Stufe : </td>
+      <td width="23%" align="left" valign="middle" > <input class="textinput" type="text" name="required_level" value="{$load_req_level}"></td>
+    </tr>
+    <tr>
+      <td >Bild-URL</td>
+      <td colspan="2" ><input class="textinput" type="text" size="50" name="buildpic" value="{$load_b_pic}"></td>
+      <td width="23%" align="center" valign="middle" >&nbsp;</td>
+    </tr>
+    <tr> 
+      <td >Position</td>
+      <td <input class="textinput" type="text" size="10" name="positions" value="{$positions}"></td>
+    </tr>
+    <tr>
+      <td >Beschreibungstext</td>
+      <td colspan="3" ><textarea id="descr" name="descr" cols="50" rows="5">{$description}</textarea></td>
+    </tr>
+    <tr>
+      <td colspan="4" ><div align="center">
+          <input class="button" type="submit" value="Speichern">
+        </div></td>
+    </tr>
+  </table>
+  </form>
+
+<br><br>
+
+
+
+<table   width="100%" align="center">
+  <tr>
+    <th >Nicht zugeordnete Einheiten:</th>
+  </tr>
+  <tr>
+    <td align="center"  >{$error_buildings}</td>
+</table>
+</center>
+
+
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

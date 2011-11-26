@@ -1,0 +1,40 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}gruppe.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Berechtigungseditor</h1>
+		          <h3>Verf&uuml;gbare Module</h3>
+		          <form action="?action=save_mod" method="POST">
+		          <table width="700">
+			          <tr>
+			          	<td>Modulname</td>
+			          	<td>Beschreibung</td>
+			          	<td>Berechtigungslevel</td>
+			          </tr>
+			         {foreach item=mod from=$mods}
+			          <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+			          	<td>{$mod.name}</td>
+			          	<td>{$mod.description}</td>
+			          	<td><input type="text" name="perm[{$mod.id}]" value="{$mod.perm}"></td>
+			          </tr>
+			         {/foreach}
+		          </table>
+		          <div align="right"><input class="button" type="submit"></div>
+		          </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

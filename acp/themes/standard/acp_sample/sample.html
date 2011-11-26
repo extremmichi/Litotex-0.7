@@ -1,0 +1,41 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}/home.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>Sample</i></h1></td>
+    </tr>
+</table>  
+<!-- Userdaten -->
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+					<div class="stat">
+						<table>
+    <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+      <td>Userid</td>
+			<td>Username</td>
+			<td>Kennwort</td>
+   </tr>
+{section name=mysec loop=$daten}
+{strip}
+   <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+      <td>{$daten[mysec].userid}</td>
+			<td>{$daten[mysec].username}</td>
+			<td>{$daten[mysec].password}</td>
+   </tr>
+{/strip}
+{/section}
+</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Userdaten ende -->
+
+    {include file="file:footer.html"}
+</div>

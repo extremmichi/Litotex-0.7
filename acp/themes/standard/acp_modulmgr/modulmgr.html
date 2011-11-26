@@ -1,0 +1,130 @@
+{include file="file:header.html"}
+ {literal}
+<script language="JavaScript">
+function fenster(url)
+{
+NeuesFenster=window.open(url,"Litotex Updateinformationen","width=500,height=400,status=no,scrollbars=yes,resizable=yes")
+}
+
+</script>
+ {/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}modul.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat">
+		          
+		          
+		          ACP Module
+		          <table class ="lito_table" width="700" border="0">
+				  		
+				  		<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		    						<td width="10%">Type</td>
+		    						<td width="20%">Name</td>
+		    						<td width="60%">Beschreibung</td>
+		    						<td width="20%">Version</td>
+		    						<td width="20%">aktivieren</td>
+		    						<td width="20%">Update</td>
+		    						<td width="20%">Info</td>
+		  						</tr>
+				  		
+				  			{foreach item=con from=$modules}
+		  						<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		    						
+		    					
+		  						<td width="20%"><img src="{$LITO_IMG_PATH}acp.png" alt="ACP Modul" title="ACP Modul" width="20" height="20" border="0"></td>
+		  							
+		    					
+		    						<td width="20%">{$con.modul_name}</td>
+		    						<td width="60%">{$con.modul_description}</td>
+		    						<td width="20%">{$con.current_version}</td>
+		  						
+		  					
+		  						{if $con.disable_allowed =='0' }
+		  						
+		  							<td width="20%"><img src="{$LITO_IMG_PATH}stop.png" alt="Modul kann nicht deaktiviert werden" title="Modul kann nicht deaktiviert werden" width="20" height="20" border="0"></td>
+		  						 {else} 
+												{if $con.activated =='0' }
+													<td width="20%"><a href="modulmgr.php?action=activate&id={$con.modul_admin_id}"><img src="{$LITO_IMG_PATH}active.png" alt="Modul aktivieren" title="Modul aktivieren" width="20" height="20" border="0"></td>
+												{else} 
+		  										<td width="20%"><a href="modulmgr.php?action=deactivate&id={$con.modul_admin_id}"><img src="{$LITO_IMG_PATH}deactive.png" alt="Modul deaktivieren" title="Modul deaktivieren" width="20" height="20" border="0"></a></td>
+		  									{/if} 
+		  						 {/if} 
+		  						
+		  						{if $con.new_upd_available =='1' }
+		  						<td width="20%"><a href="datei.html" onclick="fenster('http://update.freebg.de/updinfo.php?action=info&uname={$con.modul_name}');return false;"><img src="{$LITO_IMG_PATH}info.png" alt="update Information" title="Update Information" width="20" height="20" border="0"></td>
+									{else} 
+									<td width="20%"></td>
+									{/if} 
+		  						<td width="20%"><a href="datei.html" onclick="fenster('{$LITO_MODUL_PATH_URL}acp_modulmgr/modulmgr.php?action=get_info&uname={$con.modul_name}');return false;"><img src="{$LITO_IMG_PATH}info.png" alt="Modul Information" title="Modul Information" width="20" height="20" border="0"></td>
+		  						</tr>
+		  						
+								{/foreach}
+						</table>
+
+
+						<br>Game Module
+		          <table class ="lito_table" width="700" border="0">
+				  		
+				  		<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		    						<td width="10%">Type</td>
+		    						<td width="20%">Name</td>
+		    						<td width="60%">Beschreibung</td>
+		    						<td width="20%">Version</td>
+		    						<td width="20%">aktivieren</td>
+		    						<td width="20%">Update</td>
+		    						<td width="20%">Info</td>
+		  						</tr>
+				  		
+				  			{foreach item=con_b from=$modules_b}
+		  						<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		    						
+		    					
+		  						<td width="20%"><img src="{$LITO_IMG_PATH}game.png" alt="GAME Modul" title="GAME Modul" width="20" height="20" border="0"></td>
+		  						
+		    						
+		    					
+		    						<td width="20%">{$con_b.modul_name}</td>
+		    						<td width="60%">{$con_b.modul_description}</td>
+		    						<td width="20%">{$con_b.current_version}</td>
+		  						
+		  					
+		  						{if $con_b.disable_allowed =='0' }
+		  						
+		  							<td width="20%"><img src="{$LITO_IMG_PATH}stop.png" alt="Modul kann nicht deaktiviert werden" title="Modul kann nicht deaktiviert werden" width="20" height="20" border="0"></td>
+		  						 {else} 
+												{if $con_b.activated =='0' }
+													<td width="20%"><a href="modulmgr.php?action=activate&id={$con_b.modul_admin_id}"><img src="{$LITO_IMG_PATH}active.png" alt="Modul aktivieren" title="Modul aktivieren" width="20" height="20" border="0"></td>
+												{else} 
+		  										<td width="20%"><a href="modulmgr.php?action=deactivate&id={$con_b.modul_admin_id}"><img src="{$LITO_IMG_PATH}deactive.png" alt="Modul deaktivieren" title="Modul deaktivieren" width="20" height="20" border="0"></a></td>
+		  									{/if} 
+		  						 {/if} 
+		  						
+		  						{if $con_b.new_upd_available =='1' }
+		  						<td width="20%"><a href="datei.html" onclick="fenster('http://update.freebg.de/updinfo.php?action=info&uname={$con_b.modul_name}');return false;"><img src="{$LITO_IMG_PATH}info.png" alt="update Information" title="Update Information" width="20" height="20" border="0"></td>
+									{else} 
+									<td width="20%"></td>
+									{/if} 
+		  						<td width="20%"><a href="datei.html" onclick="fenster('{$LITO_MODUL_PATH_URL}acp_modulmgr/modulmgr.php?action=get_info&uname={$con_b.modul_name}');return false;"><img src="{$LITO_IMG_PATH}info.png" alt="Modul Information" title="Modul Information" width="20" height="20" border="0"></td>
+		  						</tr>
+		  						
+								{/foreach}
+						</table>
+
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

@@ -1,0 +1,45 @@
+{include file="file:header.html"}
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table border="0" width="100%">
+            <tr>
+              <td align="left"><a href="alliance.php">{#ln_allianz_c_r_11#}</a></td>
+              <td align="right"><b>{#ln_allianz_kick_1#}</b></td>
+            </tr>
+          </table>
+          </div> 
+                                                          
+          <div class="inhalt_box1">
+          <table  width="100%" align="center">
+           <tr>
+            <td  width="10%" valign="top"><b>{#ln_name_username#}</b></td>
+            <td  width="10%" valign="top"><b>{#ln_allianz_kick_2#}</b></td>
+            <td  width="10%" valign="top"><b>{#ln_allianz_kick_3#}</b></td>
+           </tr>
+          
+            {foreach item=con from=$kicker}
+                  <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+            <td  width="10%" valign="top"><span class="normalfont">{$con.name}</span></td>
+            <td  width="10%" valign="top"><span class="normalfont">{$con.points}</span></td>
+            <td  width="10%" valign="top"><span class="normalfont"><a href="alliance.php?action=dokick&kuserid={$con.id} ">{#ln_allianz_kick_4#}</a></span></td>
+           </tr>
+           {/foreach}
+          
+          </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}

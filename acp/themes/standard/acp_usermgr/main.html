@@ -1,0 +1,26 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}user.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Usermanagement</h1>
+		          <p>Bitte w&auml;hlen sie einen User aus, den sie editieren wollen!</p>
+		          <p><h3>Username: <form action="?action=search" method="POST"><input type="text" name="name"> 
+		              <input class="button" type="submit"></form></h3></p>
+		          <p><a href="?action=list">In der Liste suchen</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

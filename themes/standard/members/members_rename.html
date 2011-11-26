@@ -1,0 +1,33 @@
+{include file="file:header.html"}
+
+<div id="content"> 
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben"><b><center>
+            <b>{#MEMBERS_C_NAME#}</b>
+          </center></b></div> 
+                                                          
+          <div class="inhalt_box1"><form action="members.php?action=submit_rename" method="post">
+<table  width="80%" align="center">
+ <tr>
+  <td  width="30%"><span class="normalfont"><b>{#MEMBERS_C_NAME#}</b></span></td>
+  <td  width="30%"><input class="textinput" type="text" name="name" value="{$M_RENAME}"></td>
+ </tr>
+ <tr>
+  <td  colspan="6"><center><br /><input class="button" type="submit" value="{#MEMEBERS_C_NAME_NEW#}"></center></td>
+ </tr>
+</table>
+</form></div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}

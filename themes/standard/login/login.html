@@ -1,0 +1,19 @@
+{include file="file:header.html"}
+     {if $if_login_error == 1}
+     <div id="error">
+				<table border="0">
+				    <tr>
+				      <td><img src="{$LITO_IMG_PATH}/error.png"/></td>
+				      <td>{$LITO_ERROR_MSG}</td>
+				    </tr>
+				</table>
+			</div>
+     {/if}
+     
+<div id="content"> 
+{#ELELM_DESC1#}
+   text
+</div>
+
+    {include file="file:footer.html"}
+</div>

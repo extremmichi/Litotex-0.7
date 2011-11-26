@@ -1,0 +1,90 @@
+{include file="file:header.html"}
+
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}debug.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat">
+		          
+		          
+		           
+	<span class="bluefont"><center>
+   Show Game Debugs<br><br>
+  Debug LEVEL :<br>
+  77= function resreload<br>
+  777= make Signature <br>
+  999= Point Update<br>
+  Further, please register here<br><br>
+</center></span>
+<form name="debuger" method="post" action="debug.php?action=debug_show">
+  
+  <table  width="600" align="center">
+    <tr>
+      <th  width="20%"><span class="normalfont">{#ELELM_DESC1#}</span></th>
+	  	<th  colspan="6"><span class="normalfont">{#ELELM_DESC2#}</span></th>
+    </tr>
+    <tr>
+      <td  width="20%">{#ELELM_DESC3#}</td>
+  	  <td  colspan="6"><input type="checkbox" name="deletes" value="deletes">
+  	    <span class="Stil1">{#ELELM_DESC4#}</span></td>
+    </tr>
+     <tr>
+      <td  width="20%">{#ELELM_DESC5#}</td>
+      <td  width="80%"><input class="textinput" name="level" type="text" size="20" maxlength="20"></span></td>
+    </tr>
+    <tr>
+      <td >{#ELELM_DESC6#}</span> </td>
+      <td  width="20%"><select class="combo" name="debug_uid">{$optionbit}</option> </td>
+    </tr>
+    <tr>
+      <td >{#ELELM_DESC7#}</td>
+      <td  width="20%"><input type="checkbox" name="alluser" value="checkbox"></td>
+    </tr>
+
+    <tr>
+      <td >&nbsp;</span></td>
+      <td ><input type="submit" class="button" name="anzeigen" value="{#ELELM_DESC8#}">
+        </span></td>
+    </tr>
+  </table>
+  </form>
+
+			<table   width="700" align="center">
+  <tr> 
+    <th width="5%" height="21"  ><span class="normalfont"><b>{#ELELM_DESC9#}</b></span></th>
+    <th  width="5%"><span class="normalfont"><b>{#ELELM_DESC10#}</b></span></th>
+    <th  width="10%"><span class="normalfont"><b>{#ELELM_DESC11#}</b></span></th>
+    <th  width="60%"><span class="normalfont"><b>{#ELELM_DESC12#}</b></span></th>
+    <th  width="20%"><span class="normalfont"><b>{#ELELM_DESC13#}<b></span></th>
+  </tr>
+{foreach item=con from=$debug_output}
+ <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+  <td width="5%"><span class="normalfont">{$con.debug_id} </span></td>
+  <td width="5%"><span class="normalfont">{$con.db_type}</span></td>
+  <td width="10%"><span class="normalfont">{$con.fromuserid}</span></td>  
+  <td width="60%"><span class="normalfont">{$con.db_text}</span></td>
+  <td width="20%"><span class="normalfont">{$con.debug_date}</span></td>
+ </tr>
+  {/foreach} 
+
+</table>	  	
+				  		
+				  	
+						</table>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

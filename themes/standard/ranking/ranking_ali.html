@@ -1,0 +1,66 @@
+{include file="file:header.html"} 
+<div id="content"> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table width="100%" border="0" align="center">
+            <tr>
+              <td ><div align="center"><a href="ranking.php">{#ELELM_DESC1#}</a></div></td>
+              <td ><div align="center"><a href="ranking.php?action=user">{#ELELM_DESC2#}</a></div></td>
+              <td ><div align="center"><a href="ranking.php?action=allianz">{#ELELM_DESC3#}</a></div></td>
+            </tr>
+          </table>
+          </div>
+          <div class="inhalt_box1">
+         
+		  </div>
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">
+            {#ELELM_DESC3#}
+          </div> 
+                                                          
+          <div class="inhalt_box1">
+          <table id="ranking_link" width="100%" align="center"> 
+            <td  width="10%"><b>{#ELELM_DESC5#}</b></td>
+            <td  width="20%"><b>{#ELELM_DESC12#}</b></td>
+            <td  width="15%"><b>{#ELELM_DESC16#}</b></td>
+            <td  width="15%"><b>{#ELELM_DESC15#}</b></td>
+            <td  width="20%"><b>{#ELELM_DESC14#}</b></td>
+            <td  width="20%"><b>{#ELELM_DESC8#}</b></td>
+            </tr>
+          {foreach item=con from=$daten}
+ 			<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		  	<td width="10%">{$con.platz}</td>
+		  	<td width="20">{$con.ali_name}</td>
+		  	<td width="15%">{$con.ali_anz}</td>
+		  	<td width="15%">{$con.ali_flag}</td>
+		  	<td width="20%">{$con.ali_test}</td>
+		  	<td width="20%">{$con.points}</td>	
+            {/foreach}
+            </table>
+          <br></div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+    {include file="file:footer.html"}

@@ -1,0 +1,140 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}user.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+<form action="?action=save&id={$user.id}" method="post"><table width="100%" border="0">
+		              <tr>
+		                <td><h1>Berechtigungseditor</h1></td>
+		                <td align="right" colspan="2"><table border="0">
+		                  <tr>
+		                    <td><h4>{$user.name}</h4></td>
+	                      </tr>
+		                  <tr>
+		                    <td>{if $user.pic == ""}<i>Bild Exestiert nicht</i>{else}<img src="{$user.pic}"><br >Bild l&ouml;schen<input type="checkbox" name="pic" value="1">{/if}</td>
+	                      </tr>
+	                    </table><br /></td>
+	                  </tr>
+		              <tr bgcolor="#CCCCCC">
+		                <td><table width="100%" border="0">
+		                  <tr>
+		                    <td><h4>Grundeinstellungen</h4></td>
+		                    <td>&nbsp;</td>
+	                      </tr>
+		                  <tr>
+		                    <td>Username:</td>
+		                    <td><input type="text" name="name" value="{$user.name}" /></td>
+	                      </tr>
+		                  <tr>
+		                    <td>E-Mail-Adresse:</td>
+		                    <td><input type="text" name="email" value="{$user.email}" /></td>
+	                      </tr>
+		                  <tr>
+		                    <td>Neues Passwort:</td>
+		                    <td><input type="text" name="passwd" /></td>
+	                      </tr>
+		                  <tr>
+		                    <td>Bannen:</td>
+		                    <td><input type="checkbox" name="blocked" value="1" {if $user.blocked == 1}CHECKED{/if}></td>
+	                      </tr>
+	                    </table></td>
+		                <td>
+                        <table width="100%" border="0">
+		                  <tr>
+		                    <td><h4>Allianz</h4></td>
+		                    <td>
+				  {if $user.alli == 0}<i>Der User ist in keiner Allianz</i>{else}
+				  </td>
+	                      </tr>
+		                  <tr>
+		                    <td>Aus Allianz l&ouml;schen:</td>
+		                    <td><input type="checkbox" name="alli" value="1"></td>
+	                      </tr>
+		                  <tr>
+		                    <td>{if $user.alliadmin == 1}Aus Allianzadmin-Status l&ouml;schen:</td>
+		                    <td><input type="checkbox" name="alliadmin" value="1">{/if}{/if}</td>
+	                      </tr>
+                          <tr>
+		                    <td>&nbsp;</td>
+		                    <td>&nbsp;</td>
+	                      </tr>
+                          <tr>
+		                    <td>&nbsp;</td>
+		                    <td>&nbsp;</td>
+	                      </tr>
+	                    </table></td>
+		                <td><table width="100%" border="0">
+		                  <tr>
+		                    <td><h4>Berechtigungen</h4></td>
+		                    <td>&nbsp;</td>
+	                      </tr>
+		                  <tr>
+		                    <td>Serveradmin:</td>
+		                    <td>{if $user.sa == 1}<b>JA</b>{else}Nein{/if}</td>
+	                      </tr>
+		                  <tr>
+		                    <td>Benutzergruppe:</td>
+		                    <td><select name="group">
+				  {foreach item=grp from=$grps}
+				  <option value="{$grp.id}"{if $grp.name == $user.group} SELECTED{/if}>{$grp.name}</option>
+				  {/foreach}
+				  </select></p>
+				  <p><input class="button" type="submit">
+				  </form></td>
+	                      </tr>
+		                  <tr>
+		                    <td>&nbsp;</td>
+		                    <td>&nbsp;</td>
+	                      </tr>
+		                  <tr>
+		                    <td>&nbsp;</td>
+		                    <td>&nbsp;</td>
+	                      </tr>
+	                    </table></td>
+	                  </tr>
+		              <tr>
+		                <td>&nbsp;</td>
+		                <td>&nbsp;</td>
+		                <td>&nbsp;</td>
+	                  </tr>
+	                </table></form>
+	              <h4>L&auml;nder des Users</h4>
+				  
+					<table  width="95%" align="center">
+                    <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+                      <td width="20%"><span class="normalfont"><b>Land</b></span></td>
+                      <td width="10%"><span class="normalfont"><b>{$GLOBAL_RES1_NAME}</b></span></td>
+                      <td width="10%"><span class="normalfont"><b>{$GLOBAL_RES2_NAME}</b></span></td>
+                      <td width="10%"><span class="normalfont"><b>{$GLOBAL_RES3_NAME}</b></span></td>
+                      <td width="10%"><span class="normalfont"><b>{$GLOBAL_RES4_NAME}</b></span></td>
+                      <td width="10%"><span class="normalfont"><b>Ressourcen</b></span></td>
+                    </tr>
+                    {foreach item=countrie from=$countries}
+  <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+    <td class="normalfont">{$countrie.name}</td>
+    <td class="smallfont_black">{$countrie.res1}</td>
+    <td class="smallfont_black">{$countrie.res2}</td>
+    <td class="smallfont_black">{$countrie.res3}</td>
+    <td class="smallfont_black">{$countrie.res4}</td>
+    <td class="smallfont_black"><a href="?action=res&id={$countrie.id}">ändern</a></td>
+    </tr>
+                    {/foreach}
+                  </table>
+                  
+		          </div>
+			</div>
+		</div>
+	</div>
+</div>    
+
+    {include file="file:footer.html"}

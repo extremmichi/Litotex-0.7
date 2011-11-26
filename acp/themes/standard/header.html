@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>{$GAME_TITLE_TEXT}</title>
+<link href="{$LITO_MAIN_CSS}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$LITO_ROOT_PATH_URL}js/tiny_mce/tiny_mce.js"></script>
+
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="header">
+    	<div id="header_navi">
+{if $if_user_login == 0}
+    	<div id="navi_header_left">Willkommen auf der Administrationsoberfl&auml;che der Browsergameengine Litotex</div>
+{else}
+<div id="navi_header_left">Willkommen {$LOGIN_USERNAME} in der Administrationsoberfl&auml;che <a href="{$LITO_BASE_MODUL_URL}acp_login/logout.php">Logout</a></div>
+{/if}
+
+      <div id="navi_header_right"><img src="{$LITO_GLOBAL_IMAGE_URL}clock.png" class="clock" alt="dsf"/> {$smarty.now|date_format:"%A, %e %B, %Y"} {$smarty.now|date_format:"%H:%M:%S"}</div>
+      <div id="logo">{if $if_disable_menu != 1}<a href="{$LITO_MODUL_PATH_URL}acp_core/admin.php"><img src="{$LITO_GLOBAL_IMAGE_URL}/logo.jpg" border="0"/></a>{/if}</div>
+    </div>
+  </div>
+  
+<div>
+<div id="navi">
+{if $if_disable_menu != 1}
+	{$LITO_NAVIGATION}
+	
+{/if}
+</div>
+{if $if_disable_menu != 1}
+<table border="0">
+  <tr>
+    <td>
+    {/if}

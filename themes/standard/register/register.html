@@ -1,0 +1,46 @@
+{include file="file:header.html"}
+   
+<div id="content"> 
+<br>
+<center><span class="text">{#LN_NOTE_REGISTER_2#}</span></center>
+<br>
+  
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+<form action="register.php?action=submit" method="post">			      	
+          <div class="inhalt_box1_oben">{#LN_REGISTER_NAME#}</div>
+            <div class="register_inhalt_box1"><br />
+    <table class="register" width="100%" align="center">
+    <th colspan="5"></th>
+    <tr> 
+      <td width="50%"><b>{#LN_NAME_USERNAME#}</b></td>
+      <td width="50%"> <input type="text" class="textinput" name="username" value="" /> </td>
+    </tr>
+    <tr> 
+      <td > <b>{#LN_NAME_EMAIL#}</b> ({#LN_NOTE_REGISTER_1#})
+      </td>
+      <td> <input type="text" class="textinput" name="email" value="" /> </td>
+    <tr> 
+      <td>{#LN_NOTE_REGISTER_3#}</td>
+      <td><input type="checkbox" name="regeln"></td>
+    </tr>
+    <tr> 
+      <td colspan="2"><div align="center">
+          <p>
+            <input name="submit" class="button" type="submit" value="{#IN_REGISTER_P_6#}" />
+          </p>
+          <br />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</div> 
+		</div> 
+      </div> 
+	</div> 
+  </div> 
+</div>
+
+{include file="file:footer.html"}

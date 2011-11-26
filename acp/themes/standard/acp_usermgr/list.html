@@ -1,0 +1,37 @@
+{include file="file:header.html"}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}user.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Berechtigungseditor</h1>
+		          <p><h3>Userliste:</h3></p>
+		          <table width="700px">
+		          <tr>
+		          	<td width="24%">Username</td>
+		          	<td width="36%">Serveradministrator</td>
+		          	<td width="40%">Usergruppe</td>
+		          </tr>
+		          {foreach item=user from=$users}
+		          <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+		          	<td><a href="?action=edit&id={$user.id}">{$user.name}</a></td>
+		          	<td><a href="?action=edit&id={$user.id}">{if $user.sa == 1}<img src="{$LITO_IMG_PATH}active.png" alt="Serveradmin" title="Serveradmin" width="20" height="20" border="0">{else}<img src="{$LITO_IMG_PATH}deactive.png" alt="Serveradmin setzen" title="Serveradmin setzen" width="20" height="20" border="0">{/if}</a></td>
+		          	<td><a href="?action=edit&id={$user.id}">{$user.group}</a></td>
+		          </tr></a>
+		          {/foreach}
+		          </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

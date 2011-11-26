@@ -1,0 +1,9 @@
+Vielen Dank für Deine Anmeldung, hier sind deine Zugangsdaten:
+
+Benutzername: [REG_USERNAME]
+Passwort: [REG_PASSWORD]
+Deine Position im Spiel [REG_X_POS]:[REG_Y_POS]
+
+---
+Diese Email wurde automatisch generiert und nicht durch eine Person verschickt.
+Bitte nicht drauf antworten.

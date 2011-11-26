@@ -1,0 +1,82 @@
+{include file="file:header.html"}
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table width="90%" border="0" align="center">
+            <tr>
+              <td ><div align="center"><a href="ranking.php">{#ELELM_DESC1#}</a></div></td>
+              <td ><div align="center"><a href="ranking.php?action=user">{#ELELM_DESC2#}</a></div></td>
+              <td ><div align="center"><a href="ranking.php?action=allianz">{#ELELM_DESC3#}</a></div></td>
+            </tr>
+          </table>
+          </div>
+          <div class="inhalt_box1">
+         
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+
+{foreach item=con from=$daten}
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table border="0" width="100%">
+            <tr>
+              <td valign="top" style="text-align: left;"><strong>{#ELELM_DESC5#} {$con.position}: </strong>{$con.profile_link}</td>
+              <td valign="top" style="text-align: right;">{$con.message_modul_name}</td>
+            </tr>
+          </table>
+</div>
+
+          <div class="inhalt_box1">
+          <table  align="center" width="80%">
+             <tr>
+              <th  colspan="3"><span class="normalfont"><b>{#ELELM_DESC5#} {$con.position}: {$con.username}</b></span></th>
+             </tr>
+             <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+              <td  width="120" rowspan="8" align="center" valign="middle"><span class="normalfont">{$con.image}</span></td>
+              <td width="188"><span class="normalfont"><b>{#ELELM_DESC12#}</b></span></td>
+              <td width="468"><span class="normalfont">{$con.profile_link}</span> {$con.online}</td>
+             </tr>
+             <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+              <td  width="188"><span class="normalfont"><b>{#ELELM_DESC7#}</b></span></td>
+              <td ><span class="normalfont">{$con.race}</span></td>
+             </tr>
+             <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+              <td  width="188"><span class="normalfont"><b>{#ELELM_DESC3#}</b></span></td>
+              <td ><span class="normalfont"><a href="alliance.php?id={$con.ali_id}&cxid=$sid">{$con.ali_name}</a></span></td>
+             </tr>
+             <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+              <td  width="188"><span class="normalfont"><b>{#ELELM_DESC8#}</b></span></td>
+              <td ><span class="normalfont">{$con.points}</span></td>
+             </tr>
+             <tr bgcolor="{cycle values="#eeeeee,#dddddd"}">
+              <td  width="188"><span class="normalfont"><b>{#ELELM_DESC9#}</b></span></td>
+              <td ><span class="normalfont">{$con.country_count}</span></td>
+             </tr>
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+{/foreach}
+</div>
+{include file="file:footer.html"}

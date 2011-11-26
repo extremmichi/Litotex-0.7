@@ -1,0 +1,118 @@
+{include file="file:header.html"}
+
+
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#ln_admin_e_4#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <table  width="90%" align="center">
+         <tr>
+           <td  colspan="2" height="60"><center><img src="{$banner_ali}"></center></td>
+         </tr> 
+          <tr>
+          <td  width="10%" valign="top"><div align="left"><span class="normalfont"><b>{#ln_allis_4#}</b></span></div></td>
+          <td  width="15%"><div align="left"><span class="normalfont">{$a_name} {$ali_flag}</span></div></td>
+         </tr>
+         <tr>
+          <td  width="10%" valign="top"><div align="left"><span class="normalfont"><b>{#ln_admin_e_16#}</b></span></div></td>
+          <td  width="15%"><div align="left"><span class="normalfont">{$a_members}/ {$maxallianzmembers}</span></div></td>
+         </tr>
+          <tr>
+          <td  width="10%" valign="top"><div align="left"><span class="normalfont"><b>{#ln_admin_e_17#}</b></span></div></td>
+          <td  width="15%"><div align="left"><span class="normalfont">{$members}</span></div></td>
+         </tr>
+        </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#ln_admin_e_5#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+       		 <tr>
+        		<td><div align="left"><span class="normalfont">{$show_menue}</span></div></td>
+        	 </tr>
+          </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#ln_admin_e_15#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <table class="tabl_def" width="80%" align="center">
+              <tr> 
+                <td class="tabl_over" width="2%"><b>{#ln_allianz_b_in_2#}</b></td>
+                <td class="tabl_over" width="10%"><b>{#ln_allis_2#}</b></td>
+                <td class="tabl_over" width="10%"><b>{#ln_allianz_b_in_3#}</b></td>
+                <td class="tabl_over" width="70%"><b>{#ln_allianz_b_3#}</b></td>
+                 <td class="tabl_over" width="10%"><b>{#ln_allianz_b_in_4#}</b></td>
+                 <td class="tabl_over" width="10%"><b>{#ln_allianz_b_in_5#}</b></td>
+              </tr>
+              {foreach item=con from=$ali_data_bew}
+                <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                    <td class="tabl_cells" width="2%"><span class="normalfont"><b>1</b></span></td>
+                      <td class="tabl_cells" width="10%"><span class="normalfont">{$con.be_name}</span></td>
+                      <td class="tabl_cells" width="10%"><span class="normalfont">{$con.be_datum}</span></td>
+                      <td class="tabl_cells" width="70%"><span class="normalfont">{$con.b_text}</span></td>
+                      <td class="tabl_cells" width="10%"><span class="normalfont">{$con.del_a}</span></td>
+                      <td class="tabl_cells" width="10%"><span class="normalfont">{$con.ok_a}</span></td>
+                </tr>
+           {/foreach}
+        </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+ {literal}
+<script type="text/javascript">
+
+	function ok() {
+	window.location.href="alliance.php?action=remove"
+	}
+
+  function delalli() {
+  
+   var options1 = {top: 100, width:250, className: "alphacube", okLabel: "Ja", cancelLabel:"Nein",buttonClass:"button",onOk:function(win) {ok(); return true;} };
+                        
+    Dialog.confirm("<b>Austreten</b><br><br>Sicher das du die Allianz auflösen möchtest ?",options1 );
+    
+  }
+
+
+
+</script>
+ {/literal}
+</div>
+{include file="file:footer.html"}

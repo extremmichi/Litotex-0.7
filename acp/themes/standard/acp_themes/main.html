@@ -1,0 +1,101 @@
+{include file="file:header.html"}
+{literal}
+<script type="text/javascript">
+<!--
+function dub(id){
+	cp = prompt('Wie soll das kopierte Design heissen?')
+	var error = false;
+	if(!cp)
+		error = true;
+	if(!cp.match('^[a-z_\-]*$')){
+		alert('Der neue Name darf nur Buchstaben (a-z), Unterstriche (_) und Minus (-) enthalten!');
+		error = true;
+	}
+	if(error == false){
+		window.location = "?action=dub&id="+id+"&new="+cp;
+	}
+}
+//-->
+</script>
+{/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}themes.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">
+				<div class="box_right">
+		          <div class="stat">
+		          <h1>Templates</h1>
+		          <p>Hier finden sie eine Liste aller installierten Templates!</p><br /><br />
+		          <table width="100%">
+		          <tr>
+		          	<td><b>Name</b></td>
+		          	<td><b>Beschreibung</b></td>
+                    <td><b></b></td>
+		          	<td><b>Aktion</b></td>
+
+		          </tr>
+		          {foreach item=theme from=$themes}
+		          <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+						<td width="100px;">{$theme.name}</td>
+		          	<td width="200px;">{$theme.description}</td>
+		          	<td>
+		          	{$theme.author} <br>
+		          	{$theme.mail} <br>
+		          	Copyright {$theme.copy} <br>
+		          	<a href="{$theme.web}" target="_blank">{$theme.web}</a>
+		          	
+		          	  
+	          	  </td>
+		          	<td>
+		          	{if $theme.aktive == 1}<img src="{$LITO_IMG_PATH}active.png" alt="Standard" title="Standard" width="20" height="20" border="0">{else}<a href="?action=changestd&id={$theme.id}"><img src="{$LITO_IMG_PATH}deactive.png" alt="Standard setzen" title="Standard setzen" width="20" height="20" border="0"></a>{/if}
+		          	<a href="?action=changealt&id={$theme.id}">{if $theme.alt == 1}<img src="{$LITO_IMG_PATH}active.png" alt="Alternative" title="Alternative" width="20" height="20" border="0">{else}<img src="{$LITO_IMG_PATH}deactive.png" alt="Alternative setzen" title="Alternative setzen" width="20" height="20" border="0">{/if}</a>
+		          	{if $theme.aktive == 0}{if $theme.id != 1}<a href="?action=remove&id={$theme.id}"><img src="{$LITO_IMG_PATH}loeschen.png" alt="L&ouml;schen" border="0" title="L&ouml;schen" width="16" height="16" /> </a>{/if}{/if}
+		          	<a href="?action=test&id={$theme.id}" target="_blank"><img src="{$LITO_IMG_PATH}testen.png" border="0" alt="Testen" title="Testen" width="16" height="16" /></a>
+		          	<a href="?action=zip&id={$theme.id}" target="_blank"><img src="{$LITO_IMG_PATH}download.png" border="0" alt="Downloaden" title="Downloaden" width="16" height="16" /></a>
+		          	<a href="javascript:dub({$theme.id})"><img src="{$LITO_IMG_PATH}dublizieren.png" border="0" alt="Dublizieren" title="Dublizieren" width="16" height="16" /></a>
+		          	</td>
+		          
+		          </tr>
+
+		          {/foreach}
+                  </table><br />
+                  <table>
+		          <tr>
+		          	<td><h3>Neu</h3></td>
+		          </tr>
+                  <tr>
+		          	<td><b>Name</b></td>
+                    <td><b>Beschreibung</b></td>
+                    <td><b>Autor</b></td>
+                    <td><b>Mail des Autors</b></td>
+                    <td><b>Website des A.</b></td>
+                    <td><b>Copyright</b></td>
+		          </tr>
+		          <form action="?action=new" method="POST">
+		          <tr >
+		          	<td><input class="textinput" type="text" name="name"></td>
+		          	<td><input class="textinput" type="text" name="description"></td>
+		          	<td><input class="textinput" type="text" name="author"></td>
+		          	<td><input class="textinput" type="text" name="mail"></td>
+		          	<td><input name="web" type="text" class="textinput" value="http://"></td>
+		          	<td><input class="textinput" type="text" name="copy"></td>
+		          </tr>
+                  <tr>
+		          	<td><br /><input class="button" type="submit"></td>
+		          </tr>
+		          </form>
+		          </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

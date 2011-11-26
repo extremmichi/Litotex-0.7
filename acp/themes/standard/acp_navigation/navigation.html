@@ -1,0 +1,110 @@
+
+ {literal}
+ 
+ <script type="text/javascript">
+
+</script>
+
+ 
+ <style type="text/css">
+#navi {
+	margin-left: 10px;
+}
+
+.icons {
+	margin-left: -3px;
+	margin-right: 10px;
+}
+
+hr {	
+	border:1px #F1592A solid;
+	background-color:#F1592A;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/********************MENÜ**************************/
+.glossymenu{
+	margin: 5px 0;
+	padding: 0;
+	width: 175px; /*width of menu*/
+	border-bottom-width: 0;
+}
+
+.glossymenu a.menuitem{
+	background:#F1F1F1;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 120%;
+	color: #000;
+	display: block;
+	position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+	width: auto;
+	padding: 4px 0;
+	padding-left: 10px;
+	text-decoration: none;
+	border:1px #E3E3E3 solid;
+	margin:1px 0 0 0;
+}
+
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+	color: #333;
+}
+
+.glossymenu .test {
+}
+
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	border: none;
+}
+
+ .glossymenu .active {
+ 	color: #FFFFFF !important;
+	background-color:#717171 !important; 
+}
+
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+	background: #FAFAFA;
+	border:1px #E3E3E3 solid;
+}
+
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.glossymenu div.submenu ul li{
+	background-color: #ffffff;
+}
+
+.glossymenu div.submenu ul li a{
+	display: block;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 90%;
+	color: #21759A;
+	text-decoration: none;
+	padding: 2px 0;
+	padding-left: 10px;
+}
+
+.glossymenu div.submenu ul li a:hover{ 
+	background: #F25729; 
+	color: #000; 
+	border:0px; 
+}
+</style>
+
+<script type="text/javascript" src="[JS_PATH]jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="[JS_PATH]ddaccordion.js"></script>
+<script type="text/javascript" src="[JS_PATH]func.js"></script>
+{/literal}
+<div id="navi">
+<div class="glossymenu">
+ [LITO_CATEGORY]
+        
+      
+</div>
+</div>

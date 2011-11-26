@@ -1,0 +1,44 @@
+{include file="file:header.html"}
+ {literal}
+<script language="javascript">
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "advanced",
+  forced_root_block : false,
+   force_br_newlines : true,
+   force_p_newlines : false,
+
+		theme_advanced_toolbar_location:'top',
+		theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+		theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor"
+	});
+</script>
+ {/literal}
+ 
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}news_new.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat">
+		          {#NEW_NEWS_TITLE_TEXT#}<br><br>
+										<form action="news.php?action={$ACTION_SAVE}" method="post">
+						 						{#NEW_NEWS_OVER_TEXT#}: <input class="textinput" name="heading" type="text" id="heading" size="70"  value="{$NEWS_OVER}" ><br><br>
+							      		<textarea rows="15" id="new_news"  class="textarea" cols="70" name="new_news">{$NEWS_TEXT_LANG}</textarea>
+							      		<br><br>
+							      		<center><input type="submit" class="button" value="{#NEWS_SAVE_BUTTON#}"></center>
+					      		</form>         
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="file:footer.html"}

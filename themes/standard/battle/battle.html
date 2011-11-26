@@ -1,0 +1,141 @@
+{include file="file:header.html"}
+{$TIME_BANNER_INIT}
+<div id="content"> 
+<br /><center>{#LN_battle_2#}</center><br />
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#LN_battle_1#}</div>
+          
+          <div class="inhalt_box1">
+          <table  width="100%" align="center">
+  			<tr>  
+    		<td>
+    			<form name="angriff" action="battle.php?action=send" method="post">
+      			<select class="combo" name="groupid">
+      			<option value="0"></option>
+        			{$groups}
+     			</select>
+      			<input class="textinput_smal" type="text" name="endx" value=""> : <input class="textinput_smal" type="text" name="endy" value=""> <input class ="button" type="submit" name="submit" value="{#LN_battle_3#}">
+      			</form>
+    	  </td>
+  		  </tr>
+		  </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#LN_battle_5#}</div>
+          
+          <div class="inhalt_box1">
+            <table  width="100%" align="center">
+              <tr  style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                <td ><span class="normalfont">{#LN_battle_6#}</span></td>
+                <td><span class="normalfont">{#LN_battle_7#}</span></td>
+                <td ><span class="normalfont">{#LN_battle_8#}</span></td>
+                <td ><span class="normalfont">{#LN_battle_9#}</span></td>
+              </tr>
+{foreach item=con from=$daten_battle_action}
+               <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                <td width="25%"><span class="normalfont"><a href="" {$con.tt}>{$con.group_name}</a></span></td>
+                <td width="25%"><span class="normalfont">{$con.island_name}</span></td>
+                <td width="25%"><span class="normalfont">{$con.message}</span></td>
+                <td width="25%"><span class="normalfont"><a href="battle.php?action=abort&gid={$con.groupid}"><img src="{$LITO_IMG_PATH}battlecancel.png" border="0">{#LN_battle_4#}</a>{$con.message_1}</span></td>
+              </tr>
+{/foreach}
+  
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#LN_battle_10#}</div>
+          
+          <div class="inhalt_box1">
+            <table  width="100%" align="center">
+              <tr  style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                <td ><span class="normalfont">{#LN_battle_6#}</span></td>
+                <td><span class="normalfont">{#LN_battle_7#}</span></td>
+                <td ><span class="normalfont">{#LN_battle_8#}</span></td>
+                <td ><span class="normalfont">{#LN_battle_9#}</span></td>
+              </tr>
+{foreach item=conb from=$daten_battle_back}
+               <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                <td width="25%"><span class="normalfont"><a href="" {$conb.tt}>{$conb.group_name}</a></span></td>
+                <td width="25%"><span class="normalfont">{$conb.island_name}</span></td>
+                <td width="25%"><span class="normalfont">{$conb.message}</span></td>
+                <td width="25%"><span class="normalfont"></span></td>
+              </tr>
+{/foreach}
+  
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>  
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#LS_BATTLE_DEF_OVER#}</div>
+          
+          <div class="inhalt_box1">
+			<table  width="100%" align="center">
+                </tr>
+                   <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                    <td width="20%"><span class="normalfont">{#LN_battle_deff_1#}</span></td>
+                    <td width="20%"><span class="normalfont">{#LN_system_land#}</span></td>
+                    <td width="20%"><span class="normalfont">{#LN_battle_6#}</span></td>
+                    <td width="20%"><span class="normalfont">{#LN_battle_8#}</span></td>
+                    <td width="20%"><span class="normalfont">{#LN_battle_11#}</span></td>
+                </tr>
+{foreach item=con3 from=$daten_battle_def}
+                <tr style="background-color:{cycle values="#ffffff,#eeeeee"}">
+                    <td width="20%"><span class="redfont">{$con3.angreifer_name}</span></td>
+                    <td width="20%"><span class="redfont">{$con3.angreifer_land}</span></td>
+                    <td width="20%"><span class="redfont">{$con3.group_name}</span></td>
+                    <td width="20%"><span class="redfont">{$con3.request_counter}</span></td>
+                    <td width="20%"><span class="redfont">{$con3.request_battle_counter}</span></td>
+                </tr>
+{/foreach}
+  
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div>  
+
+</div>
+{include file="file:footer.html"}

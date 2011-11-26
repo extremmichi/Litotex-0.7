@@ -1,0 +1,54 @@
+{include file="file:header.html"}
+
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}map.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+		          <div class="stat">
+		          
+		          
+		           
+	<form name="map" method="post" action="map.php?action=make_map">
+  <table class="lito_table" width="400" align="center">
+    
+    <tr>
+      <td width="50%" ><b>{#LANDSIZE#}</b></td>
+      <td  width="50%"><input type="text" name="x" value="{$op_map_size}" class="textinput"> * {$op_map_size}</td>
+    </tr>
+    <tr>
+      <td ><b>{#LANDELEMENT1#}</b></td>
+      <td  width="50%"><input type="text" name="elem1" value="50" class="textinput"></td>
+    </tr>
+    <tr>
+      <td ><b>{#LANDELEMENT2#}</b></td>
+      <td  width="50%"><input type="text" name="elem2" value="50" class="textinput"></td>
+    </tr>
+     <tr>
+      <td >&nbsp;</td>
+      <td ><input class="button"type="submit" name="ausfuehren" value="{#BUTTONSAVE#}">
+        </span></td>
+    </tr>
+  </table>
+  </form>
+
+				  	
+				  		
+				  	
+						</table>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    {include file="file:footer.html"}

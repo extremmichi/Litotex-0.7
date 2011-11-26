@@ -1,0 +1,70 @@
+{literal}
+<script type="text/javascript">
+
+var start{/literal}{$banner_id}{literal} = {/literal}{$startzeit}{literal};
+var end{/literal}{$banner_id}{literal} = 	{/literal}{$endzeit}{literal};
+var current{/literal}{$banner_id}{literal} = {/literal}{$banner_curtime}{literal};
+
+
+
+
+
+var count{/literal}{$banner_id}{literal}= end{/literal}{$banner_id}{literal}-start{/literal}{$banner_id}{literal};
+var org_count{/literal}{$banner_id}{literal} =count{/literal}{$banner_id}{literal};
+count{/literal}{$banner_id}{literal}=count{/literal}{$banner_id}{literal}-(current{/literal}{$banner_id}{literal}-start{/literal}{$banner_id}{literal});
+
+function countdown_{/literal}{$banner_id}{literal}()
+{
+ 
+ 
+ count{/literal}{$banner_id}{literal}--;
+  progressBar_{/literal}{$banner_id}{literal}(count{/literal}{$banner_id}{literal});
+  if(count{/literal}{$banner_id}{literal} > -1) {
+   sekunden=count{/literal}{$banner_id}{literal};
+	stunden=Math.floor(sekunden/3600);
+    sekunden-=stunden*3600;
+    minuten=Math.floor(sekunden/60);
+    sekunden-=minuten*60;
+   document.getElementById('countdown_{/literal}{$banner_id}{literal}').innerHTML =stunden+ ':' +     minuten + ':' +sekunden
+    setTimeout('countdown_{/literal}{$banner_id}{literal}()', 1000);
+  } else {
+ 
+
+	  window.location='{/literal}{$NAVIGATE2SITE}{literal}';
+
+
+  }
+}
+function progressBar_{/literal}{$banner_id}{literal}(rest{/literal}{$banner_id}{literal})
+{
+	maxwidth = 1;
+	percentage =Math.round(100-(rest{/literal}{$banner_id}{literal}/(org_count{/literal}{$banner_id}{literal} /100) ));
+	
+	if (percentage < 0 )percentage=0;  
+	if (percentage > 100 ) { 
+	percentage=100;
+	
+	}else{
+	width = percentage * maxwidth;
+     }
+  
+  	new Effect.Morph('progressBar_{/literal}{$banner_id}{literal}', {style:'width:' + width + 'px ; '});   
+  	document.getElementById('percent_{/literal}{$banner_id}{literal}').innerHTML = percentage + '%' ;
+	
+}
+
+</script>
+{/literal}
+
+
+
+<div class ="barContainer" id="barContainer">
+<div class ="{$banner_css}" id="progressBar_{$banner_id}"></div>
+<div class="progress_text">
+<div class ="countdown" id="countdown_{$banner_id}"></div>
+<div class ="percent" id="percent_{$banner_id}"></div>
+</div>
+</div>
+<script type="text/javascript" language="JavaScript">
+countdown_{$banner_id}();
+</script>

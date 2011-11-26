@@ -1,0 +1,44 @@
+
+ {literal}
+<script type="text/javascript">
+    function updateData() {
+
+        var options1 = {
+                        method : 'get',
+                        parameters: 'action=get_msg_count',
+                        frequency:5,
+                        decay:1
+                      };
+        var myAjaxiV2 =new Ajax.PeriodicalUpdater('msg_count','./../../modules/core/ajax_core.php', options1);
+
+
+        var options = {
+                        method : 'get',
+                        parameters: 'action=get_b_count',
+                        frequency:4,
+                        decay:1
+                        
+                      };
+        var myAjaxiV1=new Ajax.PeriodicalUpdater('bat_count','./../../modules/core/ajax_core.php', options);
+    }
+
+</script>
+{/literal}
+<div id="navi">
+{if $IS_LOGED_IN =='1' }
+
+<script>Javascript:updateData()</script>
+<div class="red" id="msg_count"></div>
+<div class="red" id="bat_count"></div>
+
+{/if}
+  <table width="auto" border="0">
+
+					<tr>
+					
+						{foreach item=con from=$daten_navi}
+							<td style="padding-left: 10px;" id="{$con[3]}"><a href="{$con[2]}"><img src="[LITO_IMG_PATH]icon/general.png" border="0" /><div class="navi_link">{$con[1]}</div></a></td>
+						{/foreach}
+					</tr>
+	</table>
+</div>

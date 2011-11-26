@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Modul Info</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+{literal}
+<style type="text/css">
+<!--
+#wrapper {
+	height: 350px;
+	width: 450px;
+	margin: auto;
+}
+
+#info {
+	background-color: #333333;
+}
+
+#info table {
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #FFFFFF;
+}
+
+#content {
+	border-bottom: 1px solid #ff6633;
+	border-left: 1px solid #ff6633;
+	border-right: 1px solid #ff6633;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+-->
+</style>
+{/literal}
+</head>
+
+<body>
+<div id="wrapper">
+      <div id="info">
+        <table width="450" border="0">
+          <tr>
+            <td width="323"><strong>{$modul_name}</strong></td>
+            <td width="117"><strong>Version : {$modul_v}</strong></td>
+          </tr>
+        </table>
+      </div>
+      <div id="content">
+        <table width="430" border="0">
+          <tr>
+            <td>Modulstartdatei :</td>
+            <td>{$modul_s}</td>
+          </tr>
+          <tr bgcolor="#eeeeee">
+            <td>Update : </td>
+            <td>{$modul_upd}</td>
+          </tr>
+          <tr>
+            <td>Beschreibung : </td>
+            <td>{$modul_desc}</td>
+          </tr>
+        </table>
+        <hr>
+        <table width="450" border="0">
+          <tr>
+            <td><strong>Erweiterte Informationen</strong></td>
+          </tr>
+          <tr>
+            <td>{$modul_more}</td>
+          </tr>
+        </table>
+  </div>
+</div>
+</body>
+</html>

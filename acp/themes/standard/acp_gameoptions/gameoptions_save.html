@@ -1,0 +1,38 @@
+{include file="file:header.html"}
+ {literal}
+<script language="javascript">
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "advanced",
+		theme_advanced_toolbar_location:'top',
+		theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+		theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor"
+	});
+</script>
+ {/literal}
+<table id="rubric" width="263" border="0">
+    <tr>
+      <td width="48"><img src="{$LITO_IMG_PATH}gameoptions.png" alt="" width="35" height="35" /></td>
+      <td width="205"><h1><i>{$menu_name}</i></h1></td>
+    </tr>
+</table>
+
+<div id="content">
+	<div class="box_header">
+		<div class="box_left">
+			<div class="box_down">  
+				<div class="box_right"> 
+					
+          <div class="stat"> 
+<form action="gameoptions.php?action=submitOptions&id={$save_id}" method="post">
+      		{html_table loop=$data cols="Beschreibung,Eingabe" tr_attr=$tr table_attr='border="0" cellpadding="0" cellspacing="0" class="lito_table"' td_attr='width="100%" '}
+      		<br><br>
+      		<center><input type="submit" class="button" value="Speichern"></center>
+      		</form>         
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="file:footer.html"}

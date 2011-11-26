@@ -1,0 +1,85 @@
+{include file="file:header.html"}
+{$TIME_BANNER_INIT}
+<div id="content">
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben">{#NEW_LAND_2#}</div> 
+                                                          
+          <div class="inhalt_box1">
+          <table  width="100%" align="center">
+         <tr>
+          <td width="25%"><span class="normalfont"><b>{#NEW_LAND_1#}</b></span></td>
+          <td width="25%"><span class="normalfont"><b>{#NEW_LAND_2#}</b></span></td>
+         </tr>
+        {foreach item=con from=$daten}
+         <tr>
+          <td class="tdw" width="25%"><span class="normalfont"><b>{$con[0]} {#NEW_LAND_3#} {$con[1]}:{$con[2]}</b></span></td>
+          <td class="tdw" width="25%"><span class="normalfont">{$con[3]}</span></td>
+         </tr> 
+        {/foreach}
+        </table><br>
+        </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben"></div> 
+                                                          
+          <div class="inhalt_box1"><form action="new_land.php?action=send" method="post">
+  <table width="100%" align="center">
+    <tr> 
+      <th colspan="2" ><span class="normalfont"><b>{#NEW_LAND_4#}</b></span></th>
+    </tr>
+    <tr> 
+      <td><span class="normalfont">
+      
+          <input type="radio" name="send" value="send" checked>
+          {#NEW_LAND_5#}
+          <input type="text" size="4" class="textinput_smal" name="x">
+          {#NEW_LAND_52#}
+          <input type="text" size="4" class="textinput_smal" name="y">     
+        </span></td>
+      <td align="left"><span class="normalfont"> 
+     
+          <input class="radio" type="radio" name="send" value="create">
+          {#NEW_LAND_6#} {$op_enhance_country}
+       
+        </span></td>
+    </tr>
+    {foreach item=con from=$daten2}
+    <tr> 
+      <td><span class="normalfont">{#NEW_LAND_7#} {$con[0]} <br>
+        </span></td>
+      <td><span class="normalfont">{#NEW_LAND_8#}: {$con[1]} / {#NEW_LAND_9#} {$con[2]}</span></td>
+    </tr>
+    {/foreach}
+    <tr align="right"> 
+      <td colspan="2"><span class="normalfont"> 
+        <input class="button" type="submit" value={#NEW_LAND_10#}>
+        </span></td>
+    </tr>
+  </table>
+</form></div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+
+</div>
+{include file="file:footer.html"}

@@ -1,0 +1,59 @@
+{include file="file:header.html"}
+{$TIME_BANNER_INIT}
+<div id="content"> 
+{foreach item=con from=$daten}
+<div class="box1">
+  <div class="ro_box1">
+    <div class="lo_box1"> 
+      <div class="ru_box1">
+        <div class="lu_box1">
+                                                    
+          <div class="inhalt_box1_oben_kasten">
+          <table width="100%" border="0">
+              <tr align="center">
+                <td width="50%">{$con[1]} ({$con[2]})</td>
+                <td width="50%"><strong>{#EXPLORING_3#}</strong> {$con[8]}</td>
+              </tr>
+            </table>
+          </div> 
+                                                          
+          <div class="inhalt_box1">
+          <table border="0" width="100%">
+              <tr valign="top">
+                <td width="5%"><img border="0" src={$con[0]}></td>
+                <td width="41%"><strong>{#EXPLORE_NAME#} / {#EXPLORING_1#}</strong>
+                  <p>{$con[3]}</p></td>
+                <td width="35%"><strong>{#EXPLORING_2#}</strong>
+                  <table width="100%" border="0">
+                    <tr>
+                      <td width="40%"><strong>{$GLOBAL_RES1_NAME}</strong></td>
+                      <td width="60%"><span class="normalfont">{$con[4]}</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>{$GLOBAL_RES2_NAME}</strong></td>
+                      <td><span class="normalfont">{$con[5]}</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>{$GLOBAL_RES3_NAME}</strong></td>
+                      <td><span class="normalfont">{$con[6]}</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>{$GLOBAL_RES4_NAME}</strong></td>
+                      <td><span class="normalfont">{$con[7]}</span></td>
+                    </tr>
+                  </table>
+                  </td>
+                <td width="19%"><strong>{#EXPLORING_4#}</strong>
+                  <p class="normalfont">{$con[9]}</p></td>
+              </tr>
+            </table>
+          </div>
+        
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+{/foreach}
+</div> 
+{include file="file:footer.html"}

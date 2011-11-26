@@ -1,0 +1,24 @@
+{include file="file:header.html"}
+
+<div id="content"> 
+<center><span class="normalfont">{#LN_RACE_CHOOSE_1#}</span></center><br />
+<span class="normalfont"><strong>{#LN_RACE_CHOOSE_2#}</strong></span>
+<br>
+<div class="rahmen">
+<table width="100%" align="center">
+  <tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+    <td width="40%">{#LN_RACE_CHOOSE_3#}</td>
+    <td width="25%">{#LN_RACE_CHOOSE_4#}</td>
+    <td width="26%">{#LN_RACE_CHOOSE_5#}</td>
+  </tr>
+{foreach item=con from=$daten_race_coose}
+<tr style="background-color:{cycle values="#ffffff,#eeeeee"}"> 
+		  						<td width="20%"><a href="{$LITO_MODUL_PATH_URL}members/members.php?action=save_race&race_id={$con[0]}"><img src="{$LITO_IMG_PATH}race/race_{$con[0]}.png" alt="Image" title="Image" width="120" height="120" border="0"></a></td>
+		  						<td width="20%">{$con[1]}</td>
+		  						<td width="20%">{$con[2]}</td>
+</tr>
+{/foreach}
+</table>
+</div>  
+</div>
+    {include file="file:footer.html"}
