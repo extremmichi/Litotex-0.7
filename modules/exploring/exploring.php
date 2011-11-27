@@ -92,7 +92,7 @@ while($row_explores=$db->fetch_array($result_explores)) {
 				$message=make_timebanner($userdata['startexploretime'],$userdata['endexploretime'],$row_explores['eid'],"")."<br><a href=\"$cancelURL\">".$exploreabort."</a>";
 			}else{
 			$es_wird_gebaut=1;
-			$message='Es wird bereits geforscht!';
+			$message='Es wird bereits geforscht! ';
 		}
 	}else{
 	$message="<a href=\"exploring.php?action=explore&eid=$row_explores[eid]\">$explore</a>";
