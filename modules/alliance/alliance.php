@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberrechtlich geschützt.
+Diese Software ist urheberrechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise innerhalb dieser Datei
-dürfen WEDER entfernt, NOCH verändert werden.
+dï¿½rfen WEDER entfernt, NOCH verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -40,13 +40,13 @@ if (is_modul_name_aktive($modul_name)==0){
 }
 
 /*
-1= Allianztext ändern
-2= Allianzränge ändern
-3= Allianzränge vergeben
-4= Allianznews ändern
-5= Allianzfahne ändern
+1= Allianztext ï¿½ndern
+2= Allianzrï¿½nge ï¿½ndern
+3= Allianzrï¿½nge vergeben
+4= Allianznews ï¿½ndern
+5= Allianzfahne ï¿½ndern
 6= Rundmail schreiben
-7= Forumeinstellungen ändern
+7= Forumeinstellungen ï¿½ndern
 */
 
 function get_alianz_members($allianzid) {
@@ -343,7 +343,7 @@ if($action=="main") {
 			}
 			$show_menue=$show_menue."<li><a href=\"alliance.php?action=leave\">$ln_allianz_index_4</a></li>";
 
-			eval("\$tpl->output(\"".$tpl->get("ali_admin_menu")."\");");
+			template_out('ali_admin_menu.html', $modul_name);
 			exit();
 		}
 	}
