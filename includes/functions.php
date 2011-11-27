@@ -310,9 +310,9 @@ function get_race_id_from_user($fuserid) {
 
 function get_soldiers_speed ($tabless,$rasse){
 	global $db,$n,$userdata,$tpl;
-	$result=$db->query("SELECT stime FROM cc".$n."_soldiers WHERE tabless='".$tabless."' and race='".$rasse."'");
+	$result=$db->query("SELECT traveltime FROM cc".$n."_soldiers WHERE tabless='".$tabless."' and race='".$rasse."'");
 	$row=$db->fetch_array($result);
-	$ret=$row['stime'];
+	$ret=$row['traveltime'];
 	if ($ret==""){
 		$ret=11;
 	}
