@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberrechtlich geschützt.
+Diese Software ist urheberrechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise innerhalb dieser Datei
-dürfen WEDER entfernt, NOCH verändert werden.
+dï¿½rfen WEDER entfernt, NOCH verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -101,7 +101,7 @@ if($action=="formate") {
 	$result_new=$db->query("SELECT * FROM cc".$n."_soldiers WHERE race='$userdata[rassenid]' AND sol_type = 0");
 	while($row_new=$db->fetch_array($result_new)) {
 		$tabless = $row_new['tabless'];
-		$cur_speed=$row_new['stime'];
+		$cur_speed=$row_new['traveltime'];
 
 		if ($low_speed == -1){
 			$low_speed=$cur_speed;
