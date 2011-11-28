@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberrechtlich geschützt.
+Diese Software ist urheberrechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise innerhalb dieser Datei
-dürfen WEDER entfernt, NOCH verändert werden.
+dï¿½rfen WEDER entfernt, NOCH verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -43,7 +43,7 @@ $msg_modul_org="./../".$module[0]."/".$module[1];
 if($action=="main") {
 	$daten[]="";
 	$i=0;
-	$result_land=$db->query("SELECT * FROM cc".$n."_countries WHERE userid='".$userdata['userid']."'");
+	$result_land=$db->query("SELECT * FROM cc".$n."_countries WHERE userid='".$userdata['userid']."' ORDER BY islandid");
 
 	while($row_land=$db->fetch_array($result_land)) {
 
@@ -89,7 +89,7 @@ $daten[$i]['def']="-";
 $i++;
 }
 
-//prüfen auf allianznews
+//prï¿½fen auf allianznews
 $ali_id=$userdata['allianzid'];
 $ali_news_show="";
 $ali_news_text="";
@@ -286,7 +286,7 @@ if($action=="saveuserdata") {
 
 	$db->unbuffered_query("UPDATE cc".$n."_users SET design_id = '".$design_id."', umod  ='".$umod1."',msn='".$msn."',icq='".$icq."',description='".$description."',email='".$email."', newsletter='".$newsletter."', grafik='".$grafik."' WHERE userid='".$userdata['userid']."'");
 
-	if($password_old != "" OR $password_new_first !="" OR $password_new_first !=""){
+	if($password_old != "" AND $password_new_first !="" AND $password_new_first !=""){
 		$result=$db->query("SELECT password FROM cc".$n."_users WHERE userid='$userdata[userid]'");
 		$row=$db->fetch_array($result);
 		if($row['password']==md5($password_old)){
