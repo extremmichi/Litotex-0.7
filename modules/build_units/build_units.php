@@ -52,7 +52,7 @@ if($action=="main") {
 
 	$result=$db->query("SELECT * FROM cc".$n."_soldiers where race = ".$userdata['rassenid']." AND (sol_type = 0 or sol_type = 2 or sol_type = 3) ORDER BY sid");
 	while($row=$db->fetch_array($result)) {
-		if($userdata[$row['required']] > 0) {
+		if($userdata[$row['required']] >= $row['required_level']) {
 			$resultt=$db->query("SELECT * FROM cc".$n."_soldiers where race = ".$userdata['rassenid']." AND (sol_type = 0 or sol_type = 2 or sol_type = 3) ORDER BY name");
 			while ($rowt = $db->fetch_array($resultt)){
 
@@ -165,7 +165,13 @@ if($action=="create") {
 		show_error('BUILD_UNITS_12',$modul_name);
 		exit();
 	}
+	
+	if($row['required'] && $userdata[$row['required']] < $row['required_level']){
+        show_error('BUILD_UNITS_14',$modul_name);
+        exit();
+        }
 
+	
 	$result2=$db->query("SELECT island_id, endtime, starttime, create_sol_id FROM cc".$n."_create_sol WHERE island_id = $userdata[activeid] AND sol_type = 0 ORDER BY create_sol_id DESC LIMIT 1");
 	if($row2=$db->fetch_array($result2)) {
 		$endtime=$row2['endtime']+($row['stime']*$num);
