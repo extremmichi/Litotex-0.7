@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberechtlich geschützt.
+Diese Software ist urheberechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise Innerhalb dieser Datei
-dürfen NICHT entfernt und NICHT verändert werden.
+dï¿½rfen NICHT entfernt und NICHT verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -37,10 +37,20 @@ class navigation {
 		$IMG_PATH=LITO_IMG_PATH_URL.$this->modul_name.'/';
 
 		$navi ="";
-
-
-
-		$result=$db->query("SELECT * FROM cc".$n."_menu_game where ingame='".$ingame."' and  modul_id ='$modul_id' and menu_art_id ='".$menue_art."' order by sort_order ASC");
+		$theme = 0;
+		if(!defined('LITO_THEMES'))
+			$theme = 1;
+		else{
+			$themeq = $db->query("SELECT `design_id` FROM `cc".$n."_desigs` WHERE `design_name` = '".LITO_THEMES."'");
+			$themeq = $db->fetch_array($themeq);
+			if(!isset($themeq['design_id']))
+				$theme = 1;
+			else
+				$theme = $themeq['design_id'];
+		}
+		$result=$db->query("SELECT * FROM cc".$n."_menu_game where ingame='".$ingame."' and  modul_id ='$modul_id' and menu_art_id ='".$menue_art."' and design_id = $theme order by sort_order ASC");
+		
+		
 		while($row_g=$db->fetch_array($result)) {
 
 			$new_found_inhalt_navi=array($row_g['sort_order'],$row_g['menu_game_name'],$row_g['menu_game_link'],$row_g['optional_parameter']	);
