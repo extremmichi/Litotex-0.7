@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberrechtlich geschützt.
+Diese Software ist urheberrechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise innerhalb dieser Datei
-dürfen WEDER entfernt, NOCH verändert werden.
+dï¿½rfen WEDER entfernt, NOCH verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -69,7 +69,7 @@ if($action=="main") {
 		} else {
 
 			$numOfMans = $row['anz'];
-			$time_ready = date("H:i:s",$row['endtime']);
+			$time_ready = date("d.m.H:i:s",$row['endtime']);
 
 			$cancelURL="build_deff.php?csi=$row[create_sol_id]&action=del";
 
@@ -87,7 +87,7 @@ if($action=="main") {
 				}
 
 				if(fmod($requesttime,$sol_time)){
-					$time_for_one = fmod($requesttime,$sol_time); //rechnet den rest der zeit für aktuelle Einheit aus
+					$time_for_one = fmod($requesttime,$sol_time); //rechnet den rest der zeit fï¿½r aktuelle Einheit aus
 				} else {
 					$time_for_one = $sol_time;
 				}
@@ -109,16 +109,17 @@ if($action=="main") {
 
 	$result=$db->query("SELECT * FROM cc".$n."_soldiers where race = ".$userdata['rassenid']." AND sol_type = 1 ORDER BY sid");
 	while($row=$db->fetch_array($result)) {
-		if($userdata[$row['required']] > 0) {
+		if($userdata[$row['required']] >= $row['required_level']) {
 			$resultt=$db->query("SELECT * FROM cc".$n."_soldiers where race = ".$userdata['rassenid']." AND sol_type = 1 ORDER BY name");
 			while ($rowt = $db->fetch_array($resultt)){
 
 			}
 
-			$row['res1']=$row['res1'];
-			$row['res2']=$row['res2'];
-			$row['res3']=$row['res3'];
-			$row['res4']=$row['res4'];
+			if($row['res1'] <= 0)$row['res1']++;
+ 			if($row['res2'] <= 0)$row['res2']++;
+ 			if($row['res3'] <= 0)$row['res3']++;
+ 			if($row['res4'] <= 0)$row['res4']++;
+
 			$numOfMans=$userdata[$row['tabless']];
 			$build_time=sec2time($row['stime']);
 			$maxi=min(floor($userdata['res1']/$row['res1']),floor($userdata['res2']/$row['res2']),floor($userdata['res3']/$row['res3']),floor($userdata['res4']/$row['res4']));
