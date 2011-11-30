@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberrechtlich geschützt.
+Diese Software ist urheberrechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise innerhalb dieser Datei
-dürfen WEDER entfernt, NOCH verändert werden.
+dï¿½rfen WEDER entfernt, NOCH verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -122,14 +122,14 @@ if($action=="submit") {
 	/** create an account with all things **/
 	$password=password(8);
 
-	$result=$db->query("SELECT * FROM cc".$n."_crand ORDER BY rand()");
+	$result=$db->query("SELECT * FROM cc".$n."_crand  WHERE `used`=0 ORDER BY rand()");
 	$land=$db->fetch_array($result);
 
 	$x_pos=$land['x'];
 	$y_pos=$land['y'];
 
 	$md5_pw=md5($password);
-	trace_msg ("User $username registriert (pw:$password)",1);
+	trace_msg ("User $username registriert ",1);
 
 	$db->query("INSERT INTO cc".$n."_users (username,email,password,register_date) VALUES ('$username','$email','$md5_pw','".time()."')");
 	$userid_r=$db->insert_id();
