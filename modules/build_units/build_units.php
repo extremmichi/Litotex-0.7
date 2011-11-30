@@ -107,7 +107,7 @@ if($action=="main") {
 		} else {
 
 			$numOfMans = $row['anz'];
-			$time_ready = date("H:i:s",$row['endtime']);
+			$time_ready = date("d.m. H:i:s",$row['endtime']);
 			$cancelURL="build_units.php?csi=$row[create_sol_id]&action=del";
 
 			if($z==0) {
