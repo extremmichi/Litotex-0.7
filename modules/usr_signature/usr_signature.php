@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberrechtlich geschützt.
+Diese Software ist urheberrechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise innerhalb dieser Datei
-dürfen WEDER entfernt, NOCH verändert werden.
+dï¿½rfen WEDER entfernt, NOCH verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -64,8 +64,7 @@ while($sigdata=$db->fetch_array($result)) {
 
 
 	$sig_country_count=0;
-	$ali_point_count=222;
-
+	
 	$signatur = imagecreatefrompng($img_template);
 	imagecolorallocate ($signatur, 0, 0, 0);
 	$textfarbe = ImageColorAllocate ($signatur, 255, 255, 255);
@@ -84,7 +83,7 @@ while($sigdata=$db->fetch_array($result)) {
 	imagettftext( $signatur, 10, 0, $x2, $y2, $textfarbe, $font, $sig_points); //Spielerpunkte
 	imagettftext( $signatur, 10, 0, $x3, $y3, $textfarbe, $font, urldecode($sig_ali_name) ); //Allyname
 	imagettftext( $signatur, 10, 0, $x4, $y4, $textfarbe, $font, $ali_point_count); //Allypunkte
-	imagettftext( $signatur, 8, 0, $x5, $y5, $textfarbe, $font, $op_set_game_url); //Länder
+	imagettftext( $signatur, 8, 0, $x5, $y5, $textfarbe, $font, $op_set_game_url); //Lï¿½nder
 
 	if ($ali_id > 0 ){
 		if (is_file($flag_filename_flag)){
