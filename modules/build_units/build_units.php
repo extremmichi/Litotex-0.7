@@ -222,4 +222,5 @@ if($action=="del") {
 	}
 	header("LOCATION: build_units.php?cxid=$sid");
 	exit();
+	}
 }
