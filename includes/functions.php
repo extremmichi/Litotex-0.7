@@ -333,6 +333,7 @@ function get_duration_time ($startX,$startY,$endX,$endY,$Sol_speed){
 	global $op_land_duration;
 	$duration =ceil(get_distance_simple($startX,$startY,$endX,$endY));
 	$an_time=time()+$duration*$op_land_duration;
+	$an_time=round($an_time * $Sol_speed / 1000);
 	return $an_time;
 }
 
