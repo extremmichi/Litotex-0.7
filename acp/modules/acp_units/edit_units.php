@@ -232,7 +232,7 @@ if($action=="update") {
 	$oil=intval($_POST['kost3']);
 	$exp=intval($_POST['kost4']);
 
-	$bauzeit=intval($_POST['bauzeit']);
+	//$bauzeit=intval($_POST['bauzeit']);
 	$reisezeit=intval($_POST['traveltime']);
 
 	$einmheiten_id =intval($_GET['id']);
@@ -274,7 +274,7 @@ if($action=="new") {
 	$oil=intval($_POST['kost3']);
 	$exp=intval($_POST['kost4']);
 
-	$bauzeit=intval($_POST['bauzeit']);
+	//$bauzeit=intval($_POST['bauzeit']);
 	$reisezeit=intval($_POST['traveltime']);
 
 	$ap=intval($_POST['value_ap']);
