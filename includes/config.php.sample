@@ -1,0 +1,14 @@
+<?PHP
+  		    $dbhost = "localhost";
+			    $dbuser = "user";
+			    $dbpassword = "passwd";
+			    $dbbase = "database";
+			    $ftphost = "localhost";
+			    $ftpuser = "user";
+			    $ftppassword = "kennwort";
+			    $ftproot = "/var/www/lito/";
+			    $ftpport = "21";
+			    $litotex_path = "/var/www/lito/";
+			    $litotex_url = "http://server.tld/lito/";
+			    $n = 1;
+					?>
