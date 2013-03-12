@@ -8,13 +8,13 @@ http://www.freebg.de
 Copyright (c) 2008 FreeBG Team
 ************************************************************
 Hinweis:
-Diese Software ist urheberechtlich geschützt.
+Diese Software ist urheberechtlich geschï¿½tzt.
 
-Für jegliche Fehler oder Schäden, die durch diese Software
-auftreten könnten, übernimmt der Autor keine Haftung.
+Fï¿½r jegliche Fehler oder Schï¿½den, die durch diese Software
+auftreten kï¿½nnten, ï¿½bernimmt der Autor keine Haftung.
 
 Alle Copyright - Hinweise Innerhalb dieser Datei
-dürfen NICHT entfernt und NICHT verändert werden.
+dï¿½rfen NICHT entfernt und NICHT verï¿½ndert werden.
 ************************************************************
 Released under the GNU General Public License
 ************************************************************
@@ -47,13 +47,13 @@ if($action == 'save'){
 		error_msg('Es wurden nicht alle n&ouml;tigen Daten &uuml;bergeben.');
 		exit;
 	}
-	$id=$_GET['id']*1;
+	$id=intval($_GET['id']*1);
 	$exists = $db->query("SELECT `username` FROM `cc".$n."_users` WHERE (`username` = '".$db->escape_string($_POST['name'])."' OR `email` = '".$db->escape_string($_POST['email'])."') AND `userid` != '".$id."'");
 	if($db->num_rows($exists)){
 		error_msg('Username oder E-Mail ist bereits vergeben!');
 		exit;
 	}
-	$group = $_POST['group']*1;
+	$group = intval($_POST['group']*1);
 	$db->query("UPDATE `cc".$n."_users` SET `username` = '".$db->escape_string($_POST['name'])."', `email` = '".$db->escape_string($_POST['email'])."', `group` = '".$group."' WHERE `userid` = '".$id."'");
 	if(isset($_POST['passwd']) && $_POST['passwd'] != ''){
 		$db->query("UPDATE `cc".$n."_users` SET `password` = '".md5($_POST['passwd'])."' WHERE `userid` = '".$id."'");
@@ -115,7 +115,7 @@ if($action=="chres"){
 		error_msg("Resource 4 nicht &uuml;bergeben!");
 		exit;
 	}
-	$db->query("UPDATE `cc".$n."_countries` SET `name` = '".$db->escape_string($_POST['cname'])."', `res1` = '".$_POST['cres1']."', `res2` = '".$_POST['cres2']."', `res3` = '".$_POST['cres3']."', `res4` = '".$_POST['cres4']."' WHERE `islandid` = '".$_GET['id']."'");
+	$db->query("UPDATE `cc".$n."_countries` SET `name` = '".$db->escape_string($_POST['cname'])."', `res1` = '".intval($_POST['cres1'])."', `res2` = '".intval($_POST['cres2'])."', `res3` = '".intval($_POST['cres3'])."', `res4` = '".intval($_POST['cres4'])."' WHERE `islandid` = '".intval($_GET['id'])."'");
 	$action = 'main';
 }
 
