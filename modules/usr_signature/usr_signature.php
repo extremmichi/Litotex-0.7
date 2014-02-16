@@ -88,7 +88,7 @@ while($sigdata=$db->fetch_array($result)) {
 	if ($ali_id > 0 ){
 		if (is_file($flag_filename_flag)){
 
-			$src = imagecreatefrompng($flag_filename_flag_url);
+			$src = imagecreatefrompng($flag_filename_flag);
 			imagecopy($signatur, $src, 430, 3, 0, 0, 15, 10);
 		}
 	}
