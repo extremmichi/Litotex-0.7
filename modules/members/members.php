@@ -403,6 +403,7 @@ $tpl->assign('points', $row['points']);
 $tpl->assign('ibit', $ibit);
 $tpl->assign('online', $online);
 $tpl->assign('description', $description);
+$tpl->assign('upic', $upic);
 template_out('members_profile.html',$modul_name);
 }
 
