@@ -403,14 +403,14 @@ function sec2time($sek) {
 function bb2html($text)
 {
 
-	$text = eregi_replace("\[b\]([^\[]+)\[/b\]","<b>\\1</b>",$text);
-	$text = eregi_replace("\[i\]([^\[]+)\[/i\]","<i>\\1</i>",$text);
+	$text = preg_replace("~\[b\]([^\[]+)\[/b\]~","<b>\\1</b>",$text);
+	$text = preg_replace("~\[i\]([^\[]+)\[/i\]~","<i>\\1</i>",$text);
 	$text = preg_replace('/\[url=([^ ]+).*\](.*)\[\/url\]/', '<a href="$1" target=\"_blank\" >$2</a>', $text);
 	$text = preg_replace("(\[color=(.+?)\](.+?)\[\/color\])is","<span style=\"color: $1\">$2</span>",$text);
 	$text = preg_replace('/\n/', "<br/>\n", $text);
-	$text = eregi_replace("\[u\]([^\[]+)\[/u\]","<u>\\1</u>",$text);
-	$text = eregi_replace("\[img\]([^\[]+)\[/img\]","<img src=\"\\1\" border=\"0\">",$text);
-	$text = eregi_replace("\[mail\]([^\[]+)\[/mail\]","<a href=\"mailto:\\1\">\\1</a>",$text);
+	$text = preg_replace("~\[u\]([^\[]+)\[/u\]~","<u>\\1</u>",$text);
+	$text = preg_replace("~\[img\]([^\[]+)\[/img\]~","<img src=\"\\1\" border=\"0\">",$text);
+	$text = preg_replace("~\[mail\]([^\[]+)\[/mail\]~","<a href=\"mailto:\\1\">\\1</a>",$text);
 
 	return $text;
 

@@ -381,7 +381,7 @@ class MIME_Mail{
 		if( empty( $from_name ) ){
 			$this->from = $from_email;
 		} else {
-			$from_name = ereg_replace( "\"", "'", $from_name );
+			$from_name = preg_replace( "/\"/", "'", $from_name );
 			$this->from = "\"$from_name\" <$from_email>";
 		}
 		$this->from_address = $from_email;
@@ -400,7 +400,7 @@ class MIME_Mail{
 		if( empty( $rpl_name ) ){
 			$this->replyto = $rpl_email;
 		} else {
-			$rpl_name = ereg_replace( "\"", "'", $rpl_name );
+			$rpl_name = preg_replace( "/\"/", "'", $rpl_name );
 			$this->replyto = "\"$rpl_name\" <$rpl_email>";
 		}
 
@@ -440,7 +440,7 @@ class MIME_Mail{
 		if( empty( $to_name ) ){
 			$addto = $to_email;
 		} else {
-			$to_name = ereg_replace( "\"", "'", $to_name );
+			$to_name = preg_replace( "/\"/", "'", $to_name );
 			$addto = "\"$to_name\" <$to_email>";
 		}
 		
@@ -465,7 +465,7 @@ class MIME_Mail{
 		if( empty( $cc_name ) ){
 			$addcc = $cc_email;
 		} else {
-			$cc_name = ereg_replace( "\"", "'", $cc_name );
+			$cc_name = preg_replace( "/\"/", "'", $cc_name );
 			$addcc = "\"$cc_name\" <$cc_email>";
 		}
 		
@@ -490,7 +490,7 @@ class MIME_Mail{
 		if( empty( $bcc_name ) ){
 			$addbcc = $bcc_email;
 		} else {
-			$bcc_name = ereg_replace( "\"", "'", $bcc_name );
+			$bcc_name =preg_replace( "/\"/", "'", $bcc_name );
 			$addbcc = "\"$bcc_name\" <$bcc_email>";
 		}
 		
