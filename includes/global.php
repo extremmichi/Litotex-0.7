@@ -49,7 +49,7 @@ $_SESSION['litotex_start_g_url'] = $litotex_url;
 /** get db class **/
 define("LITO_INCLUDES_PATH", $litotex_path . 'includes/');
 require (LITO_INCLUDES_PATH . 'config.php');
-require (LITO_INCLUDES_PATH . 'class_db_mysql.php');
+require (LITO_INCLUDES_PATH . 'class_db_mysqli.php');
 
 
 $db = new db($dbhost, $dbuser, $dbpassword, $dbbase);
