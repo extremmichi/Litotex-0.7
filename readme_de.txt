@@ -35,6 +35,7 @@ INSTALLATION
    templates_c
    templates_c/standard
    acp/templates_c
+   images_sig
    Setzen Sie diesen Ordner mit CHMOD Rechten (nur Linux) auf 777 (0777)
 
 2. Lege eine neue Datenbank an.
